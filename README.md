@@ -1,6 +1,6 @@
 # MindSense
 
-## 👥 Takım Üyeleri
+##  Takım Üyeleri
 
 - **Fatma Ceren Çil** – Scrum Master  
 - Seydi Dağlı  
@@ -8,10 +8,11 @@
 - Aybüke Yıldız  
 - Hamide Arslan  
 
----
+
 
 <details>
-<summary><strong>📌 Proje Tanımı</strong></summary>
+<summary><strong> Proje Tanımı</strong></summary>
+
 
 MindSense, öğrencilerin seçtikleri derslerde yapay zekâ destekli bir şekilde yazılı veya sesli olarak çalışabildiği bir eğitim platformudur. Sistem, öğrencilerin verdiği yanıtlardan duygu analizi yaparak onların psikolojik durumlarını değerlendirir. Eğer öğrencinin duygusal durumu risk taşıyorsa (örneğin: depresyon, öfke, yoğun üzüntü), sistem öğrenciye destekleyici içerikler gösterir veya ciddi durumlarda ilgili okulun rehber öğretmenine otomatik olarak bildirim gönderir.
 
@@ -19,10 +20,10 @@ Bu yapı hem uzaktan eğitim deneyimini bireyselleştirir hem de öğrencilerin 
 
 </details>
 
----
+
 
 <details>
-<summary><strong>🎯 Proje Amacı ve Kapsamı</strong></summary>
+<summary><strong> Proje Amacı ve Kapsamı</strong></summary>
 
 **Amaçlar:**
 - Öğrencilerin bireysel öğrenme deneyimini iyileştirmek
@@ -39,10 +40,10 @@ Bu yapı hem uzaktan eğitim deneyimini bireyselleştirir hem de öğrencilerin 
 
 </details>
 
----
+
 
 <details>
-<summary><strong>🎯 Hedef Kitle</strong></summary>
+<summary><strong> Hedef Kitle</strong></summary>
 
 - İlköğretim ve lise düzeyindeki öğrenciler  
 - Rehber öğretmenler ve okul psikolojik danışmanları  
@@ -52,10 +53,10 @@ Bu yapı hem uzaktan eğitim deneyimini bireyselleştirir hem de öğrencilerin 
 
 </details>
 
----
+
 
 <details>
-<summary><strong>🔧 Kullanılan Teknolojiler</strong></summary>
+<summary><strong> Kullanılan Teknolojiler</strong></summary>
 
 | Alan | Teknoloji |
 |------|-----------|
@@ -72,4 +73,4 @@ Tüm çözümler ücretsiz açık kaynak veya ücretsiz kontenjan dahilindedir.
 
 </details>
 
----
+
