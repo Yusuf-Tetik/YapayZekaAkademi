@@ -14,13 +14,51 @@
 <summary><strong> Proje Tanımı</strong></summary>
 
 
-MindSense, öğrencilerin seçtikleri derslerde yapay zekâ destekli bir şekilde yazılı veya sesli olarak çalışabildiği bir eğitim platformudur. Sistem, öğrencilerin verdiği yanıtlardan duygu analizi yaparak onların psikolojik durumlarını değerlendirir. Eğer öğrencinin duygusal durumu risk taşıyorsa (örneğin: depresyon, öfke, yoğun üzüntü), sistem öğrenciye destekleyici içerikler gösterir veya ciddi durumlarda ilgili okulun rehber öğretmenine otomatik olarak bildirim gönderir.
+MindSense, ilkokul ve lise düzeyindeki öğrencilerin dijital ortamda bireysel ders çalışmasını destekleyen; yapay zekâ destekli, yazılı ve sesli etkileşime açık, duygusal durum farkındalığı yüksek bir eğitim platformudur.
 
-Bu yapı hem uzaktan eğitim deneyimini bireyselleştirir hem de öğrencilerin ruhsal iyi oluşunu dijital yollarla destekler.
+Uygulama, öğrencinin seçtiği konularda etkileşimli olarak soru sorar ve öğrencinin verdiği cevapları yazılı veya sesli olarak analiz eder. Eğer öğrenci, öfke, üzüntü, kaygı, stres veya depresyon gibi olumsuz duygular taşıyorsa, sistem öncelikle öğrenciye uygun destekleyici yanıtlar üretir. Eğer bu durum devam ediyorsa veya risk düzeyi artıyorsa, ilgili okulun rehberlik servisine otomatik uyarı sistemi üzerinden bildirim gönderir.
+
+MindSense, öğrenci performansını sadece akademik açıdan değil, psikolojik refah açısından da izleyen, Türkiye'de geliştirilen hibrit (eğitim + rehberlik destekli) yapay zekâ tabanlı okul içi rehberlik bildirim sistemine sahip eğitim teknolojisidir. Bu yönüyle bireysel farklılıklara saygı duyar, öğrencinin duygusal sesini dijital ortamda görünür kılar.
+
+Uygulama, yapay zekâyı sadece bilgi üretiminde değil, aynı zamanda duygu analizi, rehberlik entegrasyonu ve otomatik yönlendirme mekanizması ile sosyal fayda yaratacak biçimde kullanır.
+
+
 
 </details>
 
+<details>
+<summary><strong> Proje Özellikleri </strong></summary>
 
+ **Konu Bazlı Dijital Etkileşim:**  
+  Öğrenci, öğrenmek istediği dersi ve konuyu platform üzerinde seçer. Uygulama, konuya özel olarak yapılandırılmış soru–yanıt döngüsü başlatır.
+
+- **Yapay Zekâ Destekli Öğrenme:**  
+  LLM (Large Language Model) altyapısı ile öğrencinin verdiği yanıtlar değerlendirilir. Yanıtlara göre detaylı geri bildirimler ve takip soruları sunulur.
+
+- **Duygu Analizi (Emotion Analysis):**  
+  Öğrencinin verdiği yazılı veya sesli yanıtlar, DistilBERT Emotion modeli ile analiz edilir. Duygular (üzgün, öfkeli, stresli, kararsız vb.) sınıflandırılır.
+
+- **Destekleyici Yanıtlar:**  
+  Öğrencinin duygusal durumuna göre, pozitif geri bildirimler, motivasyon mesajları ve stres azaltıcı öneriler sistem tarafından otomatik olarak sunulur.
+
+- **Rehberlik Sistemi Uyarı Mekanizması:**  
+  Öğrencinin duygusal risk durumu eşik değeri aştığında, sistem bu durumu rehber öğretmen ekranına bildirim olarak iletir.
+
+- **Sesli Yanıt ve Ses Tanıma:**  
+  Öğrenci isterse mikrofon ile konuşarak da yanıt verebilir. Sistem bu sesi yazıya dönüştürüp analiz eder ve sesli yanıtla geri döner.
+
+- **Farklı Rol ve Ekranlar:**  
+  - **Öğrenci Paneli:** Konu seçimi, yanıt alanı, sesli yanıt butonları  
+  - **Rehber Öğretmen Paneli:** Bildirimler, öğrenci duygu geçmişi ve müdahale seçenekleri  
+
+
+- **Veri Güvenliği ve Loglama:**  
+  Tüm analizler anonimleştirilmiş şekilde kayıt altına alınır. Kullanıcı verileri şifrelenerek saklanır.
+
+- **Gelişmiş Geri Bildirim Motoru:**  
+  Sistem, öğrencinin hem doğru–yanlış yanıtlarını hem de duygusal durumunu birleştirerek yönlendirmeleri buna göre üretir.
+
+</details>
 
 <details>
 <summary><strong> Proje Amacı ve Kapsamı</strong></summary>
