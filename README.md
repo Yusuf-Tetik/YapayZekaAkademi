@@ -1,6 +1,6 @@
 # MindSense
 
-##  Takım Üyeleri
+##  Grup 184 AI Takım Üyeleri
 
 - **Fatma Ceren Çil** – Scrum Master  
 - Seydi Dağlı  
