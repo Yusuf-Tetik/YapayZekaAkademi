@@ -212,7 +212,7 @@ Aşağıda, Sprint 1 sürecinde takımımızın performansını değerlendiren 1
 | **Toplam**                    |                                                                          | **92 / 100**        |
 
 > Sprint 1 başarıyla tamamlanmıştır. Takım, planlanan işlerin büyük bölümünü zamanında tamamlamış ve Scrum metodolojisine uygun şekilde ilerlemiştir.
-
+[Burndown Chart](docs/sprint1_burndown_chart.png)
 
 </details>
 
