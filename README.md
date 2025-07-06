@@ -186,13 +186,13 @@ Aşağıdaki belgeler, Sprint 1 süresince yapılan planlamaları ve çalışmal
 
 #### Takım İletişimi – Toplantılar ve Notlar
 
-- 🗨️ [WhatsApp Notları 1](docs/whatsapp_1.png)  
-- 🗨️ [WhatsApp Notları 2](docs/whatsapp_2.png)  
-- 🗨️ [WhatsApp Notları 3](docs/whatsapp_3.png)  
-- 🗨️ [WhatsApp Notları 4](docs/whatsapp_4.png)  
-- 🗨️ [WhatsApp Notları 5](docs/whatsapp_5.png) 
-- 💻 [Meet Toplantısı – Ekip Planlama 1](docs/meet_1.png)  
-- 💻 [Meet Toplantısı – UI Tartışması 2](docs/meet_2.png)
+- 🗨️ [WhatsApp Notları 1](docs/whatsapp_1.png.png)  
+- 🗨️ [WhatsApp Notları 2](docs/whatsapp_2.png.png)  
+- 🗨️ [WhatsApp Notları 3](docs/whatsapp_3.png.png)  
+- 🗨️ [WhatsApp Notları 4](docs/whatsapp_4.png.png)  
+- 🗨️ [WhatsApp Notları 5](docs/whatsapp_5.png.png) 
+- 💻 [Meet Toplantısı – Ekip Planlama 1](docs/meet_1.png.png)  
+- 💻 [Meet Toplantısı – UI Tartışması 2](docs/meet_2.png.png)
 
 
 ### Sprint 1 Değerlendirmesi
