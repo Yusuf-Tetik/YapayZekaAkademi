@@ -153,6 +153,38 @@ Tüm teknolojiler ücretsiz açık kaynaklıdır veya ücretsiz kullanım konten
 
 </details>
 <details>
+<summary><strong> Sprint 1</strong></summary>
+  
+## Sprint 1: Proje Planlama ve Hazırlık Süreci
+
+Bu sprintte, proje fikrinin netleştirilmesi, ekip rollerinin belirlenmesi, teknolojik altyapının kararlaştırılması ve temel arayüz taslaklarının oluşturulması hedeflenmiştir.
+
+### Tamamlanan Başlıca Çalışmalar
+
+- **Proje fikri belirlendi:** Eğitim odaklı bir yapay zekâ destekli sistem geliştirme kararı alındı. Öğrencilerin verdiği yazılı veya sesli cevaplara göre duygu analizi yapılacak; depresif, öfkeli veya üzgün gibi durumlar algılandığında destek mesajı gösterilecek veya rehber öğretmene bildirim gönderilecek.
+- **Ekip rolleri tanımlandı:** Scrum Master, Product Owner ve geliştirici ekip üyeleri belirlendi. 
+- **Kullanılacak teknolojiler seçildi:** Streamlit, Whisper, gTTS, DistilBERT Emotion, Gemini 1.5 Pro gibi çözümler üzerinden çalışılmasına karar verildi. 
+- **UI wireframe taslakları oluşturuldu:** Öğrenci arayüzü, konu seçim ekranı ve sohbet ekranı gibi temel bölümler için ilk taslaklar çizildi.
+- **Miro üzerinden planlama yapıldı:** Sprint backlog oluşturuldu, görevler dağıtıldı ve ilerleme burndown chart ile takip edildi.
+- **Chatbot modülünün temel yapısı hazırlandı:** Öğrenci mesajlarını alıp duygu analizine gönderme süreci prototip düzeyde kurgulandı.
+- **Scrum belgeleri toplandı:** Toplantı notları, görev dağılımı ekran görüntüleri ve wireframe tasarımları arşivlendi.
+
+### Belgeler ve Ekran Görüntüleri
+
+- [Miro Sprint Panosu](https://miro.com/...)  
+- `docs/sprint1/miro_board.png` – Miro görev takibi ekranı  
+- `docs/sprint1/burndown_chart.png` – Sprint 1 burndown chart  
+- `docs/sprint1/wireframes/` – Wireframe taslak görselleri  
+- `docs/sprint1/whatsapp_notes.pdf` – Toplantı mesajları ve kararlar  
+
+### Sprint 1 Değerlendirmesi
+
+Sprint 1 sonunda proje yönü ve çalışma düzeni netleştirilmiş, geliştirme için gerekli planlama tamamlanmıştır. Bu sprintin sonunda ekip olarak odaklandığımız başlıca çıktı, doğru hedefe odaklanmak ve sürdürülebilir bir geliştirme süreci oluşturmaktı. Eksik kalan tüm detaylar Sprint 2’ye aktarılacaktır.
+
+
+</details>
+
+<details>
 <summary><strong> Kurulum Talimatları</strong></summary>
 
 ```bash
