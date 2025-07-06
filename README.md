@@ -169,13 +169,29 @@ Bu sprintte, proje fikrinin netleştirilmesi, ekip rollerinin belirlenmesi, tekn
 - **Chatbot modülünün temel yapısı hazırlandı:** Öğrenci mesajlarını alıp duygu analizine gönderme süreci prototip düzeyde kurgulandı.
 - **Scrum belgeleri toplandı:** Toplantı notları, görev dağılımı ekran görüntüleri ve wireframe tasarımları arşivlendi.
 
-### Belgeler ve Ekran Görüntüleri
+### Sprint 1 Belgeleri ve Ekran Görüntüleri
 
-- [Miro Sprint Panosu](https://miro.com/...)  
-- `docs/sprint1/miro_board.png` – Miro görev takibi ekranı  
-- `docs/sprint1/burndown_chart.png` – Sprint 1 burndown chart  
-- `docs/sprint1/wireframes/` – Wireframe taslak görselleri  
-- `docs/sprint1/whatsapp_notes.pdf` – Toplantı mesajları ve kararlar  
+Aşağıdaki belgeler, Sprint 1 süresince yapılan planlamaları ve çalışmaları belgelemektedir:
+
+#### Miro Panosu ve Sprint Planlaması
+
+- 📌 [Miro Sprint Panosu 1](docs/sprint1/miro_board_1.png)  
+- 📌 [Miro Sprint Panosu 2](docs/sprint1/miro_board_2.png)
+
+#### UI Wireframe Tasarımları
+
+- 🖼️ [Wireframe – Ana Sayfa](docs/sprint1/wireframe_1.png)  
+- 🖼️ [Wireframe – Chatbot Ekranı](docs/sprint1/wireframe_2.png)  
+- 🖼️ [Wireframe – Konu Seçimi](docs/sprint1/wireframe_3.png)
+
+#### Takım İletişimi – Toplantılar ve Notlar
+
+- 🗨️ [WhatsApp Toplantı Notu 1](docs/sprint1/whatsapp_1.png)  
+- 🗨️ [WhatsApp Toplantı Notu 2](docs/sprint1/whatsapp_2.png)  
+- 🗨️ [WhatsApp Toplantı Notu 3](docs/sprint1/whatsapp_3.png)  
+- 💻 [Meet Toplantısı – Ekip Planlama 1](docs/sprint1/meet_1.png)  
+- 💻 [Meet Toplantısı – UI Tartışması 2](docs/sprint1/meet_2.png)
+
 
 ### Sprint 1 Değerlendirmesi
 
