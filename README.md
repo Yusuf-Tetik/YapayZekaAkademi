@@ -6,7 +6,7 @@
 - Seydi Dağlı  
 - Yusuf Tetik  
 - Aybüke Yıldız  
-- Hamide Arslan  
+- Hamide Arslan  - Product Owner
 
 
 
@@ -79,11 +79,22 @@ Uygulama, yapay zekâyı sadece bilgi üretiminde değil, aynı zamanda duygu an
 </details>
 
 
+<details>
+<summary><strong> Kullanıcı Rolleri</strong></summary>
+
+| Rol               | Açıklama                                                                 |
+|------------------|--------------------------------------------------------------------------|
+| Öğrenci          | Sisteme giriş yaparak chatbot üzerinden ders çalışır ve analiz edilir.  |
+| Rehber Öğretmen  | Riskli durumlarda öğrencilerle ilgili bildirim alır ve takip yapar.      |
+| Sistem Yöneticisi| Kullanıcı yönetimi ve genel sistem kontrolünü sağlar.                    |
+| Geliştirici      | Yazılım altyapısını geliştirir ve sistem entegrasyonlarını yürütür.      |
+</details>
+
 
 <details>
 <summary><strong> Hedef Kitle</strong></summary>
 
-- İlköğretim ve lise düzeyindeki öğrenciler  
+- İlköğretim, ortaöğretim ve lise düzeyindeki öğrenciler  
 - Rehber öğretmenler ve okul psikolojik danışmanları  
 - Eğitim kurumları (resmî veya özel)  
 - Uzaktan eğitim sistemleri  
@@ -91,24 +102,72 @@ Uygulama, yapay zekâyı sadece bilgi üretiminde değil, aynı zamanda duygu an
 
 </details>
 
+<details>
+<summary><strong> Kullanıcı Senaryoları (User Story)</strong></summary>
+
+### Öğrenci (Primary User)
+- Derse başlamadan önce duygusal durumumu analiz eden bir sistem kullanmak istiyorum ki sistem bana uygun bir içerik ve yaklaşım sunabilsin.
+- Her ders için ayrı ayrı asistanla konuşmak istiyorum ki dersi daha iyi kavrayabileyim.
+- Sorduğum sorulara yazılı ve sesli cevaplar alabilmek istiyorum ki anlamadığım noktaları daha net anlayabileyim.
+- Asistanın beni anlamadığını hissettiğimde tekrar açıklamasını isteyebileyim ki öğrenme sürecim kesintiye uğramasın.
+
+### Öğretmen
+- Öğrencilerimin sistemdeki etkileşimlerini görmek istiyorum ki kimlerin desteğe ihtiyacı olduğunu anlayabileyim.
+- Öğrencinin verdiği yanıtların hangi konularda eksik olduğunu görebilmek istiyorum ki bireysel destek sağlayabileyim.
+
+### Rehber Öğretmen / Psikolojik Danışman
+- Riskli duygusal duruma sahip öğrencilere ilişkin bildirim almak istiyorum ki erken müdahale edebileyim.
+- Sistem tarafından analiz edilen duygusal durum geçmişini görebilmek istiyorum ki öğrencinin gelişimini uzun vadede izleyebileyim.
+
+### Sistem Yöneticisi / Geliştirici
+- Kullanıcı rollerini yönetebilmek istiyorum ki öğrenci, öğretmen ve danışmanlara uygun haklar verebileyim.
+- Sistem loglarını takip edebilmek istiyorum ki sorun çıktığında hızlıca müdahale edebileyim.
+- Kullanıcıdan gelen metni duygu analizine gönderen bir API yazmak istiyorum ki her mesajda öğrencinin ruh hali anlaşılabilsin.
+</details>
 
 
 <details>
 <summary><strong> Kullanılan Teknolojiler</strong></summary>
 
-| Alan | Teknoloji |
-|------|-----------|
-| Arayüz | Streamlit (web tabanlı arayüz) |
-| LLM (Yapay Zekâ Yanıtı) | Ollama - Gemma 3B (yerel), Google Gemini 1.5 Pro (bulut) |
-| Duygu Analizi | HuggingFace – DistilBERT Emotion |
-| Ses Tanıma (STT) | Whisper (OpenAI), alternatif: Vosk |
-| Sesli Yanıt (TTS) | gTTS, Tortoise TTS |
-| Veritabanı | Supabase veya MongoDB Atlas |
-| Bildirim Sistemi | Admin panel üzerinden uyarı veya e-posta API |
-| Loglama | JSON tabanlı olay kayıtları (öğrenci cevap + duygu + zaman) |
+## Kullanılan Teknolojiler
 
-Tüm çözümler ücretsiz açık kaynak veya ücretsiz kontenjan dahilindedir.
+Tüm teknolojiler ücretsiz açık kaynaklıdır veya ücretsiz kullanım kontenjanı dahilindedir.
+
+### Genel Teknoloji Tablosu
+
+| Katman / Alan        | Teknoloji / Araçlar                    | Açıklama |
+|----------------------|----------------------------------------|----------|
+| Backend              | FastAPI                                | Python tabanlı hızlı ve modern web çatısı |
+| Frontend             | Streamlit (veya Gradio)                | Web tabanlı etkileşimli kullanıcı arayüzü |
+| Veritabanı           | PostgreSQL               | Kullanıcı ve içerik verilerinin saklanması |
+| LLM (Yanıt Üretimi)  | Ollama – Gemma 3B (lokal), Gemini 1.5 Pro (bulut) | Chatbot yanıtları ve yönlendirme önerileri |
+| Duygu Analizi (NLP)  | HuggingFace – DistilBERT Emotion       | Öğrenci metinlerinden duygu durumu tahmini |
+| Ses Tanıma (STT)     | OpenAI Whisper veya Vosk               | Öğrenci sesli yanıtlarının metne dönüştürülmesi |
+| Sesli Yanıt (TTS)    | gTTS, Tortoise TTS                     | Chatbot yanıtlarının sese dönüştürülmesi |
+| Bildirim Sistemi     | E-posta API, Admin Panel               | Rehber öğretmene uyarı gönderme mekanizması |
+| Loglama              | JSON formatında kayıt (timestamp + duygu + metin) | Öğrenci etkileşim geçmişi ve analiz raporları |
+| Hosting / Deployment | Vercel (Frontend), Render (Backend)    | Projenin canlı ortama aktarılması |
+| Proje Yönetimi       | Miro, GitHub Projects                  | Scrum yönetimi, sprint planlaması |
+| Sürüm Kontrolü       | Git + GitHub                           | Kod versiyonlama ve takım içi iş birliği |
+
 
 </details>
+<details>
+<summary><strong> Kurulum Talimatları</strong></summary>
 
+```bash
+# 1. Repoyu klonlayın
+git clone https://github.com/Yusuf-Tetik/YapayZekaAkademi.git
+cd YapayZekaAkademi
 
+# 2. Sanal ortam oluşturun ve etkinleştirin
+python -m venv venv
+source venv/bin/activate  # Windows için: venv\Scripts\activate
+
+# 3. Gereksinimleri yükleyin
+pip install -r requirements.txt
+
+# 4. Backend sunucusunu çalıştırın
+cd backend
+uvicorn main:app --reload
+</details>
