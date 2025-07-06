@@ -180,19 +180,19 @@ Aşağıdaki belgeler, Sprint 1 süresince yapılan planlamaları ve çalışmal
 
 #### UI Wireframe Tasarımları
 
-- 🖼️ [Wireframe – Ana Sayfa](docs/sprint1/wireframe_1.png)  
-- 🖼️ [Wireframe – Chatbot Ekranı](docs/sprint1/wireframe_2.png)  
-- 🖼️ [Wireframe – Konu Seçimi](docs/sprint1/wireframe_3.png)
+- 🖼️ [Wireframe – Ana Sayfa](wireframes/wireframe_1.png.jpg)  
+- 🖼️ [Wireframe – Chatbot Ekranı](wireframes/wireframe_2.png.jpg)  
+- 🖼️ [Wireframe – Konu Seçimi](wireframes/wireframe_3.png.jpg)
 
 #### Takım İletişimi – Toplantılar ve Notlar
 
-- 🗨️ [WhatsApp Notları 1](docs/sprint1/whatsapp_1.png)  
-- 🗨️ [WhatsApp Notları 2](docs/sprint1/whatsapp_2.png)  
-- 🗨️ [WhatsApp Notları 3](docs/sprint1/whatsapp_3.png)  
-- 🗨️ [WhatsApp Notları 4](docs/sprint1/whatsapp_4.png)  
-- 🗨️ [WhatsApp Notları 5](docs/sprint1/whatsapp_5.png) 
-- 💻 [Meet Toplantısı – Ekip Planlama 1](docs/sprint1/meet_1.png)  
-- 💻 [Meet Toplantısı – UI Tartışması 2](docs/sprint1/meet_2.png)
+- 🗨️ [WhatsApp Notları 1](docs/whatsapp_1.png)  
+- 🗨️ [WhatsApp Notları 2](docs/whatsapp_2.png)  
+- 🗨️ [WhatsApp Notları 3](docs/whatsapp_3.png)  
+- 🗨️ [WhatsApp Notları 4](docs/whatsapp_4.png)  
+- 🗨️ [WhatsApp Notları 5](docs/whatsapp_5.png) 
+- 💻 [Meet Toplantısı – Ekip Planlama 1](docs/meet_1.png)  
+- 💻 [Meet Toplantısı – UI Tartışması 2](docs/meet_2.png)
 
 
 ### Sprint 1 Değerlendirmesi
