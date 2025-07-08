@@ -94,7 +94,7 @@ Uygulama, yapay zekâyı sadece bilgi üretiminde değil, aynı zamanda duygu an
 <details>
 <summary><strong> Hedef Kitle</strong></summary>
 
-- İlköğretim, ortaöğretim ve lise düzeyindeki öğrenciler  
+- İlkokul, ortaokul ve lise düzeyindeki öğrenciler  
 - Rehber öğretmenler ve okul psikolojik danışmanları  
 - Eğitim kurumları (resmî veya özel)  
 - Uzaktan eğitim sistemleri  
