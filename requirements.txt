@@ -1,1 +1,43 @@
+# MindSense Project Dependencies - Essential Packages
+# Backend Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
 
+# Frontend Framework
+streamlit==1.28.1
+gradio==4.7.1
+
+# Database
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.23
+alembic==1.13.0
+
+# Basic AI/ML Libraries
+numpy==1.26.2
+pandas==2.1.4
+
+# LLM Integration
+google-generativeai==0.3.2
+openai==1.6.1
+ollama==0.1.7
+
+# Speech Processing
+openai-whisper==20231117
+vosk==0.3.45
+gtts==2.4.0
+
+# Audio Processing
+librosa==0.10.1
+soundfile==0.12.1
+
+# HTTP Requests
+requests==2.31.0
+httpx==0.25.2
+
+# Environment and Configuration
+python-dotenv==1.0.0
+python-multipart==0.0.6
+
+# Logging
+loguru==0.7.2
