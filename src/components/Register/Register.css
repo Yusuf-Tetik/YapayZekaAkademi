@@ -1,0 +1,354 @@
+/* Register.css - Çocuk dostu register sayfası stilleri */
+
+.register-container {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hoş geldin mesajı */
+.register-welcome {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.register-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: var(--spacing-sm);
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.register-subtitle {
+  font-size: 16px;
+  color: var(--dark-gray);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Register formu */
+.register-form {
+  width: 100%;
+}
+
+/* İsim-soyisim satırı */
+.register-name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: 0;
+}
+
+/* Genel hata mesajı */
+.register-error {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: rgba(240, 98, 146, 0.1);
+  border: 2px solid var(--primary-pink);
+  border-radius: var(--radius-medium);
+  color: var(--primary-pink);
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
+  animation: errorShake 0.5s ease-in-out;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Bilgilendirme kutusu */
+.register-info {
+  background: rgba(126, 211, 33, 0.1);
+  border: 2px solid var(--primary-green);
+  border-radius: var(--radius-medium);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.info-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-green);
+  margin-bottom: var(--spacing-sm);
+}
+
+.info-list {
+  margin: 0;
+  padding-left: var(--spacing-lg);
+  color: var(--dark);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.info-list li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.info-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer - Login linki */
+.register-footer {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--gray);
+}
+
+.register-login-text {
+  color: var(--dark-gray);
+  font-size: 14px;
+}
+
+.register-login-link {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.register-login-link:hover {
+  color: var(--primary-green);
+  text-decoration: underline;
+  text-decoration-color: var(--primary-green);
+}
+
+.register-login-link:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+  border-radius: var(--radius-small);
+}
+
+/* Dekoratif elementler */
+.register-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(245, 166, 35, 0.1), rgba(240, 98, 146, 0.1));
+  animation: float 8s ease-in-out infinite;
+}
+
+.decoration-circle-1 {
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  right: -50px;
+  animation-delay: 0s;
+}
+
+.decoration-circle-2 {
+  width: 80px;
+  height: 80px;
+  bottom: -40px;
+  left: -40px;
+  animation-delay: 4s;
+}
+
+.decoration-star {
+  position: absolute;
+  font-size: 18px;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.decoration-star-1 {
+  top: 15%;
+  right: 8%;
+  animation-delay: 0.5s;
+}
+
+.decoration-star-2 {
+  bottom: 35%;
+  left: 3%;
+  animation-delay: 1.5s;
+  font-size: 16px;
+}
+
+.decoration-star-3 {
+  top: 40%;
+  right: 5%;
+  animation-delay: 2.5s;
+  font-size: 14px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(90deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+/* Responsive tasarım */
+@media (max-width: 480px) {
+  .register-name-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .register-title {
+    font-size: 22px;
+  }
+  
+  .register-subtitle {
+    font-size: 15px;
+  }
+  
+  .info-list {
+    font-size: 12px;
+    padding-left: var(--spacing-md);
+  }
+  
+  .register-login-text {
+    font-size: 13px;
+  }
+  
+  .decoration-circle-1 {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    right: -35px;
+  }
+  
+  .decoration-circle-2 {
+    width: 60px;
+    height: 60px;
+    bottom: -30px;
+    left: -30px;
+  }
+  
+  .decoration-star {
+    font-size: 16px;
+  }
+  
+  .decoration-star-2 {
+    font-size: 14px;
+  }
+  
+  .decoration-star-3 {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .register-title {
+    font-size: 20px;
+  }
+  
+  .register-subtitle {
+    font-size: 14px;
+  }
+  
+  .register-info {
+    padding: var(--spacing-sm);
+  }
+  
+  .info-title {
+    font-size: 13px;
+  }
+  
+  .info-list {
+    font-size: 11px;
+  }
+}
+
+/* Tablet ve orta ekranlar */
+@media (min-width: 481px) and (max-width: 768px) {
+  .register-name-row {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+/* High contrast mode desteği */
+@media (prefers-contrast: high) {
+  .register-title {
+    -webkit-text-fill-color: var(--dark);
+    background: none;
+  }
+  
+  .register-error {
+    background: var(--white);
+    border-width: 3px;
+  }
+  
+  .register-info {
+    background: var(--white);
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion desteği */
+@media (prefers-reduced-motion: reduce) {
+  .decoration-circle,
+  .decoration-star,
+  .register-error {
+    animation: none;
+  }
+  
+  .register-login-link {
+    transition: none;
+  }
+}
+
+/* Form geçiş animasyonları */
+.register-form {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sınıf seçimi animasyonu */
+.register-form .select-wrapper:last-of-type {
+  animation: fadeInDown 0.4s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
