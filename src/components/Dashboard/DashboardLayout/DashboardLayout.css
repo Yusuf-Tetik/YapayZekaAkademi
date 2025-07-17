@@ -1,0 +1,38 @@
+/* Dashboard Layout - Ana içerik düzeni */
+.dashboard-layout {
+  flex: 1;
+  position: relative;
+  z-index: 10;
+}
+
+.dashboard-content {
+  min-height: calc(100vh - 80px); /* Header yüksekliği çıkarılmış */
+  padding: 2rem 0;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 1.5rem 0;
+  }
+
+  .content-container {
+    padding: 0 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-content {
+    padding: 1rem 0;
+  }
+
+  .content-container {
+    padding: 0 0.5rem;
+  }
+} 

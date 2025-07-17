@@ -2,6 +2,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
+import StudentDashboard from './components/Dashboard/StudentDashboard'
 import './App.css'
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
           
           {/* Register sayfası rotası */}
           <Route path="/register" element={<Register />} />
+          
+          {/* Dashboard sayfası rotası */}
+          <Route path="/dashboard" element={<StudentDashboard />} />
           
           {/* Bulunamayan sayfalar için login'e yönlendir */}
           <Route path="*" element={<Navigate to="/login" replace />} />

@@ -60,8 +60,7 @@ const Login = () => {
       if (data.email === 'demo@mindsense.com' && data.password === 'demo123') {
         // Başarılı giriş - dashboard'a yönlendir
         console.log('Giriş başarılı:', data)
-        // navigate('/dashboard') // İleride eklenecek
-        alert('🎉 Giriş başarılı! Dashboard yakında eklenecek.')
+        navigate('/dashboard')
       } else {
         setLoginError('E-mail veya şifre hatalı. Lütfen tekrar deneyiniz.')
       }
