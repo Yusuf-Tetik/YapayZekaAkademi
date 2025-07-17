@@ -19,20 +19,23 @@ if os.path.exists(PROMPT_PATH):
 else:
     base_prompt = "{history}\nSen: {message}\nMindSense:"
 
+# Sayfa ayarları
 st.set_page_config(page_title="MindSense Chatbot", page_icon="💬")
 st.title("💬 MindSense Chatbot")
 st.write("Merhaba! Ben MindSense. Derslerinde yardıma ihtiyacın olduğunda buradayım!")
 
 # Sohbet geçmişi için session_state kullan
 if "history" not in st.session_state:
-    st.session_state.history = []  # Her eleman: ("Sen"/"MindSense", mesaj)
+    st.session_state.history = []  # Yeni yapı: {"role": "user"/"assistant", "content": "mesaj"}
 
 # Sohbet geçmişini yukarıdan aşağıya sırala ve hizala
-for sender, msg in st.session_state.history:
-    if sender == "Sen":
-        st.markdown(f"<div style='text-align: right; color: #1a73e8;'><b>{sender}:</b> {msg}</div>", unsafe_allow_html=True)
-    else:
-        st.markdown(f"<div style='text-align: left; color: #34a853;'><b>{sender}:</b> {msg}</div>", unsafe_allow_html=True)
+for item in st.session_state.history:
+    role = item["role"]
+    msg = item["content"]
+    if role == "user":
+        st.markdown(f"<div style='text-align: right; color: #1a73e8;'><b>Sen:</b> {msg}</div>", unsafe_allow_html=True)
+    elif role == "assistant":
+        st.markdown(f"<div style='text-align: left; color: #34a853;'><b>MindSense:</b> {msg}</div>", unsafe_allow_html=True)
 
 # Örnek sorular sadece ilk mesajda göster
 if len(st.session_state.history) == 0:
@@ -50,35 +53,42 @@ with st.form(key="chat_form", clear_on_submit=True):
     user_input = st.text_input("", placeholder="Mesajınızı yazın...")
     send = st.form_submit_button("Gönder")
 
+# Kullanıcı gönderdiğinde işlem başlasın
 if send and user_input:
-    # Prompt için geçmişi uygun formata çevir (sadece tamamlanmış çiftler)
-    history_str = ""
-    i = 0
-    while i < len(st.session_state.history):
-        sender, msg = st.session_state.history[i]
-        if sender == "Sen":
-            history_str += f"Sen: {msg}\n"
-            # Sonraki MindSense cevabı varsa ekle
-            if i+1 < len(st.session_state.history) and st.session_state.history[i+1][0] == "MindSense":
-                history_str += f"MindSense: {st.session_state.history[i+1][1]}\n"
-                i += 2
-            else:
-                i += 1
-        else:
-            i += 1
-    # Şimdi yeni kullanıcı mesajını da ekle
-    history_str += f"Sen: {user_input}\nMindSense:"
-    prompt = base_prompt.replace("{history}", history_str).replace("{message}", user_input)
+
+    # Geçmişi uygun biçimde model promptuna dönüştüren fonksiyon
+    def build_chat_history(history):
+        lines = []
+        for item in history:
+            if item["role"] == "user":
+                lines.append(f"Sen: {item['content']}")
+            elif item["role"] == "assistant":
+                lines.append(f"MindSense: {item['content']}")
+        return "\n".join(lines)
+
+    # Promptu hazırla
+    chat_str = build_chat_history(st.session_state.history)
+    full_prompt = base_prompt.replace("{history}", chat_str).replace("{message}", user_input)
+    # prompt ekranı görsel olarak yazdır
+    with st.expander("📜 Oluşturulan Prompt (Debug)", expanded=False):
+        st.code(full_prompt)
+
+    
+
+
     payload = {
         "model": MODEL_NAME,
-        "prompt": prompt,
+        "prompt": full_prompt,
         "stream": True
     }
-    # Kullanıcı mesajını geçmişe ekle
-    st.session_state.history.append(("Sen", user_input))
-    # Stream yanıtı için placeholder
+
+    # Kullanıcı mesajını geçmişe kaydet
+    st.session_state.history.append({"role": "user", "content": user_input})
+
+    # Stream edilen cevabı göstermek için placeholder
     response_placeholder = st.empty()
     streamed_answer = ""
+
     try:
         with requests.post(OLLAMA_URL, json=payload, stream=True, timeout=120) as resp:
             resp.raise_for_status()
@@ -102,6 +112,7 @@ if send and user_input:
             f"<div style='text-align: left; color: #34a853;'><b>MindSense:</b> {streamed_answer}</div>",
             unsafe_allow_html=True
         )
-    # MindSense cevabını geçmişe ekle
-    st.session_state.history.append(("MindSense", streamed_answer))
+
+    # MindSense cevabını geçmişe kaydet
+    st.session_state.history.append({"role": "assistant", "content": streamed_answer})
     st.rerun()
