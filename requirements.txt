@@ -41,3 +41,10 @@ python-multipart==0.0.6
 
 # Logging
 loguru==0.7.2
+
+# LangChain
+langchain==0.3.1
+langchain-community==0.3.1
+openai==1.6.1
+
+
