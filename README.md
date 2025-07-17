@@ -152,7 +152,10 @@ Tüm teknolojiler ücretsiz açık kaynaklıdır veya ücretsiz kullanım konten
 
 
 </details>
-
+<details>
+  <summary><strong> Miro Link </strong></summary>
+  https://miro.com/welcomeonboard/SEw5bGFBK1pLZ1R4a050QnBsSk9Wc0R6WXN0clpoemt4M25zTW1YdUJuV3FSNnFnNDM3bUxmMkNQRW1BbS9aNHZZQTZmL1NlNXJ6ZFU4R0RhelhtRGRDK3V4S2N5UE05MC9haWVBZmJQWXk4TS9KbG16MHJyTTVjS3VpM3JIVEphWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=888493269890
+</details>
 <details>
 <summary><strong>Product Backlog</strong></summary>
 
