@@ -363,7 +363,8 @@ Bu sprintte, duygu analiz modülünün tam entegre şekilde çalışması, chatb
 - ![Emotional Analysis](docs/sprint2/emotionanalysis.jpg)  
 
 #### Veritabanı Şeması
-- ![Veritabanı](docs/sprint2/databaseschema.jpg)  
+- ![Veritabanı](docs/sprint2/databaseschema.jpg)
+- ![Veritabanı 2](docs/sprint2/Şema2.jpg)
 
 #### Öğrenci Paneli
 - 🖼️ ![Frontend 1](docs/sprint2/fronend1.jpg)
@@ -475,9 +476,6 @@ Aşağıda takımın performansını değerlendiren bir tablo yer almaktadır:
 
 
 
-
-### Sprint 2 Retrospective
-
 **Neler İyi Gitti?**
 - Chatbot modülü tamamen çalışır hâle getirildi.
 - Duygu analiz sistemi sınıflandırma, eşik belirleme ve loglama olarak eksiksiz kuruldu.
@@ -491,7 +489,7 @@ Aşağıda takımın performansını değerlendiren bir tablo yer almaktadır:
 - UI ekranlarında detaylı bileşenlerin (animasyon, geri bildirim sistemi) Sprint 3'e bırakılması gerekti.
 
 
-### Gelecek Sprintlerde Hedefler
+### Sprint 2 Retrospective
 
 - TTS modülünün entegre edilmesi (Chatbot’un sesli yanıt verebilmesi)
 - Öğrencinin duygu skorlarına göre öğretmene bildirim sisteminin kurulması
