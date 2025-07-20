@@ -472,6 +472,7 @@ Aşağıda takımın performansını değerlendiren bir tablo yer almaktadır:
 | Chatbot Modülü            | 5            | 25         | 18          |
 | **TOPLAM**                | **25**       | **125**    | **118**     |
 
+[Burndown Chart](docs/sprint2/sprint2_burndown_chart_v2.png)
 </details>
 
 
