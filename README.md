@@ -14,7 +14,7 @@
 <summary><strong> Proje Tanımı</strong></summary>
 
 
-MindSense, ilkokul ve lise düzeyindeki öğrencilerin dijital ortamda bireysel ders çalışmasını destekleyen; yapay zekâ destekli, yazılı ve sesli etkileşime açık, duygusal durum farkındalığı yüksek bir eğitim platformudur.
+MindSense, ilkokul ve ortaokul düzeyindeki öğrencilerin dijital ortamda bireysel ders çalışmasını destekleyen; yapay zekâ destekli, yazılı ve sesli etkileşime açık, duygusal durum farkındalığı yüksek bir eğitim platformudur.
 
 Uygulama, öğrencinin seçtiği konularda etkileşimli olarak soru sorar ve öğrencinin verdiği cevapları yazılı veya sesli olarak analiz eder. Eğer öğrenci, öfke, üzüntü, kaygı, stres veya depresyon gibi olumsuz duygular taşıyorsa, sistem öncelikle öğrenciye uygun destekleyici yanıtlar üretir. Eğer bu durum devam ediyorsa veya risk düzeyi artıyorsa, ilgili okulun rehberlik servisine otomatik uyarı sistemi üzerinden bildirim gönderir.
 
@@ -94,7 +94,7 @@ Uygulama, yapay zekâyı sadece bilgi üretiminde değil, aynı zamanda duygu an
 <details>
 <summary><strong> Hedef Kitle</strong></summary>
 
-- İlkokul, ortaokul ve lise düzeyindeki öğrenciler  
+- İlkokul, ortaokul düzeyindeki öğrenciler  
 - Rehber öğretmenler ve okul psikolojik danışmanları  
 - Eğitim kurumları (resmî veya özel)  
 - Uzaktan eğitim sistemleri  
@@ -152,7 +152,10 @@ Tüm teknolojiler ücretsiz açık kaynaklıdır veya ücretsiz kullanım konten
 
 
 </details>
-
+<details>
+  <summary><strong> Miro Link </strong></summary>
+  https://miro.com/welcomeonboard/SEw5bGFBK1pLZ1R4a050QnBsSk9Wc0R6WXN0clpoemt4M25zTW1YdUJuV3FSNnFnNDM3bUxmMkNQRW1BbS9aNHZZQTZmL1NlNXJ6ZFU4R0RhelhtRGRDK3V4S2N5UE05MC9haWVBZmJQWXk4TS9KbG16MHJyTTVjS3VpM3JIVEphWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=888493269890
+</details>
 <details>
 <summary><strong>Product Backlog</strong></summary>
 
@@ -300,7 +303,123 @@ Aşağıda, Sprint 1 sürecinde takımımızın performansını değerlendiren 1
 
 
 </details>
+<details>
+<summary><strong> Sprint 2 </strong></summary>
 
+Bu sprintte, duygu analiz modülünün tam entegre şekilde çalışması, chatbotun duygusal bağlama göre yanıt verebilmesi, veritabanı log sisteminin oluşturulması ve öğrenci/öğretmen paneline ait UI ekranlarının tamamlanması hedeflenmiştir.
+
+
+
+### Tamamlanan Başlıca Çalışmalar
+
+**Duygu Analizi Modülü:**
+- Emotion API sistemi projeye entegre edildi.
+- Öğrenci mesajlarındaki duygu (üzgün, öfkeli, mutlu vb.) sınıflandırmaları yapıldı.
+- Riskli duygular için düşük/orta/yüksek eşik sistemi tanımlandı.
+- Duygular zaman damgalı olarak kaydedilip loglandı.
+
+**Chatbot Geliştirme:**
+- Langchain framework ile chatbot pipeline’ı oluşturuldu.
+- Prompt sistemine duygusal bağlam tanıma özelliği eklendi.
+- Öğrenci mesajlarına göre farklı duygu türlerine özgü yanıtlar üretildi.
+- LLM tabanlı hafıza sistemi (Langchain memory) entegre edildi.
+- TTS modülü planlandı ancak uygulaması Sprint 3’e aktarıldı.
+
+**Veritabanı ve Backend:**
+- SQLite tabanlı veritabanı yapısı oluşturuldu.
+- `users`, `chat_logs`, `emotion_logs` gibi tablolar tanımlandı.
+- Otomatik log kayıt sistemi geliştirildi.
+- Backend üzerinden duygu ve mesaj verileri kolay filtrelenebilir hâle getirildi.
+
+**Frontend/UI:**
+- Öğrenci paneli wireframe’leri tamamlandı:
+  - Giriş (Login) ekranı
+  - Kayıt (Sign Up) ekranı
+  - Ana ekran (Chatbot + Anket modülü)
+- Öğretmen paneli tasarlandı:
+  - Öğrenci geçmişi görünümü
+  - Riskli durum filtreleme ekranı
+- Renk paleti, buton stilleri ve uyarı bileşenleri belirlendi.
+- Tüm tasarımlar Miro panosuna eklendi ve ekran görüntüleri `docs/` klasörüne aktarıldı.
+
+**Yönetim ve Planlama:**
+- Sprint 2 planlaması yapıldı ve Miro panosuna işlendi.
+- WhatsApp üzerinden görev paylaşımı ve senkronizasyon sağlandı.
+- 5 adet Google Meet toplantısı gerçekleştirildi.
+- Tüm toplantı ve iletişim çıktılarına ait ekran görüntüleri `docs/` alt klasörlerinde saklandı.
+- Burndown chart güncellendi.
+
+
+### Sprint 2 Belgeleri ve Ekran Görüntüleri
+
+### Sprint 2 Belgeleri ve Ekran Görüntüleri
+
+**📌 Miro Panosu ve Sprint Planlaması**  
+- ![Miro1](docs/sprint2/Miro1.png)  
+- ![Miro2](docs/sprint2/Miro2,.png)  
+- ![Miro3](docs/sprint2/Miro3.png)
+- - ![Miro3](docs/sprint2/Miro4.png)
+
+**🖼️ UI ve Chatbot Ekranları**  
+- ![Chatbot Streamlit](docs/sprint2/Chatbot Streamlit.png)  
+
+**🗨️ WhatsApp Görev Paylaşımları**  
+- ![WhatsApp1](docs/sprint2/Whatsapp1.png)  
+- ![WhatsApp2](docs/sprint2/Whatsapp2.png)  
+- ![WhatsApp3](docs/sprint2/Whatsapp3.png)
+
+**💻 Toplantı Kayıtları**  
+- ![Toplantı1](docs/sprint2/Toplantı.png)  
+- ![Toplantı2](docs/sprint2/Toplantı2.png)
+
+
+
+### Sprint 2 Değerlendirmesi
+
+Sprint 2 sonunda sistemin ilk tam çalışan iskeleti ortaya çıkarılmış, öğrenci mesajlarının işlenmesi, duygusal analizden geçmesi ve uygun yanıtın chatbot tarafından verilmesi başarıyla gerçekleştirilmiştir. Öğretmen ve öğrenci arayüzlerinin tüm temel ekranları tamamlanmış; backend ve veritabanı tarafı da üretim düzeyinde çalışabilir hale getirilmiştir.
+
+Sprint boyunca ekip disiplinli, koordine ve planlı bir şekilde ilerlemiştir. Geliştirme çıktılarının tamamı hem görseller hem dosyalar halinde belgelenmiştir.
+
+Aşağıda takımın performansını değerlendiren bir tablo yer almaktadır:
+
+### Sprint 2 Performans Skorlaması
+
+| **Kriter**                              | **Açıklama (Gerçek Görevlere Dayalı)**                                                                                       | **Puan (20 üzerinden)** |
+|----------------------------------------|------------------------------------------------------------------------------------------------------------------------------|--------------------------|
+| **Takım içi iletişim**                 | WhatsApp üzerinden haberleşildi, Google Meet toplantıları sprint içinde düzenli gerçekleştirildi.           | 15                       |
+| **Scrum uygulamalarına uygunluk**      | Sprint planı Miro’da yapıldı, görevler dağıtıldı, Burndown Chart tamamlandı. GitHub’da temel issue takibi uygulandı.          | 19                       |
+| **Belgelendirme kalitesi**             | Tüm görevler için ekran görüntüleri, README yazımı, görev kanıtları eksiksiz. Belgeler `docs/` klasöründe düzenli tutuldu.    | 20                       |
+| **UI/Wireframe çıktıları**             | Login, Signup, Ana ekran, Öğretmen paneli tamamlandı. Detaylı animasyon ve etkileşim tasarımı henüz uygulanmadı.             | 17                       |
+| **Zamanında tamamlama**                | TTS dışında tüm işler sprint takvimine uygun şekilde tamamlandı. TTS modülü Sprint 3’e aktarıldı.                            | 18                       |
+| **Modül Başarı Durumu (Chatbot & Duygu)** | Langchain memory, duygusal senaryolar, bağlamsal prompt üretimi ve duygu temelli yanıtlar başarıyla geliştirildi.             | 20                       |
+|                                        |                                                                                                                              |                          |
+| **Toplam**                             |                                                                                                                              | **109 / 120**      |
+
+
+
+### Sprint 2 Retrospective
+
+**Neler İyi Gitti?**
+- Chatbot modülü tamamen çalışır hâle getirildi.
+- Duygu analiz sistemi sınıflandırma, eşik belirleme ve loglama olarak eksiksiz kuruldu.
+- Öğrenci ve öğretmen arayüzlerine ait tüm temel ekranlar net ve kullanılabilir şekilde tasarlandı.
+- Takım içi iletişim, WhatsApp ve Meet üzerinden sürekli sürdürüldü.
+- GitHub yapısı, dosya düzeni ve issue takibi optimize edildi.
+- Veritabanı yapısı sade ve genişlemeye açık biçimde tasarlandı.
+
+**Neler Geliştirilebilir?**
+- TTS entegrasyonu planlandı ancak geliştirilemedi.
+- UI ekranlarında detaylı bileşenlerin (animasyon, geri bildirim sistemi) Sprint 3'e bırakılması gerekti.
+
+
+### Gelecek Sprintlerde Hedefler
+
+- TTS modülünün entegre edilmesi (Chatbot’un sesli yanıt verebilmesi)
+- Öğrencinin duygu skorlarına göre öğretmene bildirim sisteminin kurulması
+- UI bileşenlerinin detaylandırılması (modal, pop-up, toast, animasyonlar)
+- Öğretmen panelinde geçmiş analiz verilerine göre sıralama ve filtreleme eklenmesi
+- Kullanıcı testleri için senaryo oluşturulması ve pilot denemelerin başlatılması
+</details>
 <details>
 <summary><strong> Kurulum Talimatları</strong></summary>
 
