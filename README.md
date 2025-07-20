@@ -363,7 +363,7 @@ Bu sprintte, duygu analiz modülünün tam entegre şekilde çalışması, chatb
 - ![Emotional Analysis](docs/sprint2/emotionanalysis.jpg)  
 
 #### Veritabanı Şeması
-- ![Veritabanı](docs\sprint2\databaseschema.jpg)  
+- ![Veritabanı](docs/sprint2/databaseschema.jpg)  
 
 #### Öğrenci Paneli
 - 🖼️ ![Frontend 1](docs/sprint2/fronend1.jpg)
