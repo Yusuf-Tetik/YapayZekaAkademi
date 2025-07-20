@@ -349,10 +349,8 @@ Bu sprintte, duygu analiz modülünün tam entegre şekilde çalışması, chatb
 - Tüm toplantı ve iletişim çıktılarına ait ekran görüntüleri `docs/` alt klasörlerinde saklandı.
 - Burndown chart güncellendi.
 
-
-### Sprint 2 Belgeleri ve Ekran Görüntüleri
-
-### Sprint 2 Belgeleri ve Ekran Görüntüleri
+<details>
+<summary><strong> Sprint 2 Belgeleri ve Ekran Görüntüleri</strong></summary>
 
 **📌 Miro Panosu ve Sprint Planlaması**  
 - ![Miro1](docs/sprint2/Miro1.png)  
@@ -361,7 +359,20 @@ Bu sprintte, duygu analiz modülünün tam entegre şekilde çalışması, chatb
 - - ![Miro3](docs/sprint2/Miro4.png)
 
 **🖼️ UI ve Chatbot Ekranları**  
-- ![Chatbot Streamlit](docs/sprint2/Chatbot Streamlit.png)  
+- ![Chatbot Streamlit](docs/sprint2/ChatbotStreamlit.png)  
+
+#### Öğrenci Paneli
+- 🖼️ ![Ana Ekran – Chatbot](docs/sprint2/Chatbot%20Streamlit.png)
+- 🖼️ ![Frontend 1](docs/sprint2/frontend1.jpg)
+- 🖼️ ![Frontend 2](docs/sprint2/frontend2.jpg)
+- 🖼️ ![Frontend 3](docs/sprint2/frontend3.jpg)
+
+#### Öğrenci Anket ve Sesli Etkileşim
+- 🖼️ ![Frontend 4](docs/sprint2/frontend4.jpg)
+- 🖼️ ![Frontend 5](docs/sprint2/frontend5.jpg)
+
+#### Öğretmen Paneli
+- 🖼️ ![Frontend 6](docs/sprint2/frontend6.jpg)
 
 **🗨️ WhatsApp Görev Paylaşımları**  
 - ![WhatsApp1](docs/sprint2/Whatsapp1.png)  
@@ -372,6 +383,7 @@ Bu sprintte, duygu analiz modülünün tam entegre şekilde çalışması, chatb
 - ![Toplantı1](docs/sprint2/Toplantı.png)  
 - ![Toplantı2](docs/sprint2/Toplantı2.png)
 
+</details>
 
 
 ### Sprint 2 Değerlendirmesi
@@ -382,18 +394,82 @@ Sprint boyunca ekip disiplinli, koordine ve planlı bir şekilde ilerlemiştir. 
 
 Aşağıda takımın performansını değerlendiren bir tablo yer almaktadır:
 
-### Sprint 2 Performans Skorlaması
+<details>
+<summary><strong>🔍 Sprint 2 Görev Bazlı Skorlama Tablosu</strong></summary>
 
-| **Kriter**                              | **Açıklama (Gerçek Görevlere Dayalı)**                                                                                       | **Puan (20 üzerinden)** |
-|----------------------------------------|------------------------------------------------------------------------------------------------------------------------------|--------------------------|
-| **Takım içi iletişim**                 | WhatsApp üzerinden haberleşildi, Google Meet toplantıları sprint içinde düzenli gerçekleştirildi.           | 15                       |
-| **Scrum uygulamalarına uygunluk**      | Sprint planı Miro’da yapıldı, görevler dağıtıldı, Burndown Chart tamamlandı. GitHub’da temel issue takibi uygulandı.          | 19                       |
-| **Belgelendirme kalitesi**             | Tüm görevler için ekran görüntüleri, README yazımı, görev kanıtları eksiksiz. Belgeler `docs/` klasöründe düzenli tutuldu.    | 20                       |
-| **UI/Wireframe çıktıları**             | Login, Signup, Ana ekran, Öğretmen paneli tamamlandı. Detaylı animasyon ve etkileşim tasarımı henüz uygulanmadı.             | 17                       |
-| **Zamanında tamamlama**                | TTS dışında tüm işler sprint takvimine uygun şekilde tamamlandı. TTS modülü Sprint 3’e aktarıldı.                            | 18                       |
-| **Modül Başarı Durumu (Chatbot & Duygu)** | Langchain memory, duygusal senaryolar, bağlamsal prompt üretimi ve duygu temelli yanıtlar başarıyla geliştirildi.             | 20                       |
-|                                        |                                                                                                                              |                          |
-| **Toplam**                             |                                                                                                                              | **109 / 120**      |
+### 📊 Görev Bazlı Performans Tablosu
+
+#### 🧠 Duygu Analizi Sistemi
+
+| Modül                 | Görev                           | Durum | Açıklama                                                           | Puan |
+|-----------------------|----------------------------------|-------|--------------------------------------------------------------------|------|
+| Duygu Analizi Sistemi | Test için veri seti hazırlanması | ✅    | Örnek cümleler ve duygu senaryoları oluşturuldu.                  | 5    |
+|                       | Emotion API Entegrasyonu         | ✅    | DistilBERT modeli ile duygu API’si başarıyla kuruldu.             | 5    |
+|                       | Duygu Analizi Sınıflandırması    | ✅    | Anger, sadness vb. etiket sistemi geliştirildi.                   | 5    |
+|                       | Kritik Durum Eşikleri            | ✅    | Risk seviyeleri (düşük–orta–yüksek) sınıflandırıldı.              | 5    |
+|                       | Duygu Loglama                    | ✅    | Timestamp’li duygu kaydı başarıyla oluşturuldu.                   | 5    |
+
+#### 👨‍🏫 Öğrenci & Öğretmen Paneli
+
+| Modül                  | Görev             | Durum | Açıklama                                                    | Puan |
+|------------------------|-------------------|-------|-------------------------------------------------------------|------|
+| Öğrenci & Öğretmen Paneli | Öğrenci Paneli    | ✅    | Giriş, kayıt, anasayfa gibi tüm bileşenler hazırlandı.      | 5    |
+|                        | Kullanıcı Rolleri | ✅    | Öğrenci, öğretmen ve admin rolleri tanımlandı.              | 5    |
+
+#### 🎨 Frontend
+
+| Modül     | Görev                          | Durum | Açıklama                                                               | Puan |
+|-----------|--------------------------------|-------|------------------------------------------------------------------------|------|
+| Frontend  | Giriş Yap Sayfası              | ✅    | Öğrenci giriş sayfası tasarlandı (`Ekran görüntüsü.png`).             | 5    |
+|           | Kayıt Olma Sayfası            | ✅    | Kayıt sayfası tamamlandı.                                              | 5    |
+|           | Öğrencinin Chatbot ile Etkileşimi | ✅ | Chat ekranı aktif ve kullanılabilir durumda.                          | 5    |
+
+#### 🗃️ Veritabanı & Veri Yönetimi
+
+| Modül                    | Görev                        | Durum | Açıklama                                                                 | Puan |
+|--------------------------|------------------------------|-------|--------------------------------------------------------------------------|------|
+| Veritabanı & Veri Yönetimi | Veritabanı Şeması            | ✅    | `users`, `chat_logs`, `emotion_logs` tabloları oluşturuldu.              | 5    |
+|                          | DB Kurulumu ve Bağlantı      | ✅    | SQLite üzerinden bağlantılar kuruldu.                                    | 5    |
+|                          | Timestamp ile Duygu Loglama  | ✅    | Tüm loglar zaman bilgisiyle kaydedildi.                                  | 5    |
+|                          | Öğrenci Cevaplarının Kaydı   | ✅    | Mesaj verileri veritabanına başarıyla aktarıldı.                         | 5    |
+|                          | Rol Bazlı Kullanıcı Saklama  | ✅    | Kullanıcı rolleri veritabanında ayrı tutuluyor.                          | 5    |
+|                          | Test Amaçlı DB Kullanımı     | ✅    | İlk test bağlantıları başarıyla çalıştırıldı.                            | 5    |
+
+#### 🗂️ Yönetim & Belgeler
+
+| Modül              | Görev                      | Durum | Açıklama                                                                 | Puan |
+|--------------------|----------------------------|-------|--------------------------------------------------------------------------|------|
+| Yönetim & Belgeler | Toplantı Görselleri + Döküm| ✅    | `Toplantı1.png`, `Toplantı2.png`, `Whatsapp1-3.png` yüklendi.            | 5    |
+|                    | GitHub Dosya Yapısı        | ✅    | `docs/sprint2/` klasörü ve içerikler düzenlendi.                         | 5    |
+|                    | Burndown Chart             | ✅    | Miro planlamaları `Miro1.png` üzerinden belgelenerek yüklendi.           | 5    |
+|                    | Sprint 3 Planlaması        | ✅    | Yeni görevler `Miro2.png`, `Miro3.png`, `Miro4.png` görselleriyle eklendi.| 5    |
+
+#### 🤖 Chatbot Geliştirme Modülü
+
+| Modül                | Görev                         | Durum | Açıklama                                                               | Puan |
+|----------------------|--------------------------------|-------|------------------------------------------------------------------------|------|
+| Chatbot Modülü       | Langchain Entegrasyonu         | ⚠️    | Pipeline başlatıldı, ancak bazı hafıza/prompt detayları eksik.         | 3    |
+|                      | Chatbot Prompt Sistemi         | ✅    | Duygusal bağlam içeren prompt sistemi hazırlandı.                      | 5    |
+|                      | Chatbot Mesaj Akışı            | ✅    | Hafıza ve akış sistemi oluşturuldu.                                    | 5    |
+|                      | Chatbot Arayüzü Prototipi      | ✅    | Streamlit ile chatbot ekranı çalışır hâlde geliştirildi (`Chatbot Streamlit.png`). | 5    |
+|                      | TTS Desteği                    | ❌    | Sprint 3'e ertelendi.                                                  | 0    |
+
+---
+
+### ✅ Sprint 2 Toplam Skor
+
+| Kategori                  | Görev Sayısı | Maks. Puan | Alınan Puan |
+|---------------------------|--------------|------------|-------------|
+| Duygu Analizi Sistemi     | 5            | 25         | 25          |
+| Öğrenci & Öğretmen Paneli| 2            | 10         | 10          |
+| Frontend                  | 3            | 15         | 15          |
+| Veritabanı Yönetimi       | 6            | 30         | 30          |
+| Yönetim & Belgeler        | 4            | 20         | 20          |
+| Chatbot Modülü            | 5            | 25         | 18          |
+| **TOPLAM**                | **25**       | **125**    | **118**     |
+
+</details>
+
 
 
 
