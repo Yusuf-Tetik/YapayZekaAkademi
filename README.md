@@ -352,21 +352,26 @@ Bu sprintte, duygu analiz modülünün tam entegre şekilde çalışması, chatb
 
 ### Sprint 2 Belgeleri ve Ekran Görüntüleri
 
-**Miro Panosu ve Sprint Planlaması**
-📌 Miro Sprint Panosu 2  
-📌 Miro UI Akışı – Öğrenci ve Öğretmen Paneli
+### Sprint 2 Belgeleri ve Ekran Görüntüleri
 
-**UI Wireframe Tasarımları**
-🖼️ login_screen.png – Öğrenci Giriş Ekranı  
-🖼️ signup_screen.png – Öğrenci Kayıt Ekranı  
-🖼️ main_dashboard.png – Chatbot + Anket Ana Sayfa  
-🖼️ teacher_panel.png – Öğretmen Risk Takip Paneli  
-🖼️ miro_ui_plan.png – Miro Üzerinde UI Akış Diyagramı
+**📌 Miro Panosu ve Sprint Planlaması**  
+- ![Miro1](docs/sprint2/Miro1.png)  
+- ![Miro2](docs/sprint2/Miro2,.png)  
+- ![Miro3](docs/sprint2/Miro3.png)
+- - ![Miro3](docs/sprint2/Miro4.png)
 
-**Takım İletişimi – Toplantılar ve Notlar**
-🗨️ whatsapp_coordination.png – WhatsApp Görev Paylaşımı  
-💻 meeting_notes_s2.png – Google Meet Toplantısı – Geliştirme Değerlendirmesi  
-📉 burndown_sprint2.png – Sprint 2 Burndown Chart
+**🖼️ UI ve Chatbot Ekranları**  
+- ![Chatbot Streamlit](docs/sprint2/Chatbot Streamlit.png)  
+
+**🗨️ WhatsApp Görev Paylaşımları**  
+- ![WhatsApp1](docs/sprint2/Whatsapp1.png)  
+- ![WhatsApp2](docs/sprint2/Whatsapp2.png)  
+- ![WhatsApp3](docs/sprint2/Whatsapp3.png)
+
+**💻 Toplantı Kayıtları**  
+- ![Toplantı1](docs/sprint2/Toplantı.png)  
+- ![Toplantı2](docs/sprint2/Toplantı2.png)
+
 
 
 ### Sprint 2 Değerlendirmesi
