@@ -356,7 +356,7 @@ Bu sprintte, duygu analiz modülünün tam entegre şekilde çalışması, chatb
 - ![Miro1](docs/sprint2/Miro1.png)  
 - ![Miro2](docs/sprint2/Miro2,.png)  
 - ![Miro3](docs/sprint2/Miro3.png)
-- - ![Miro3](docs/sprint2/Miro4.png)
+- ![Miro4](docs/sprint2/Miro4.png)
 
 **🖼️ UI ve Chatbot Ekranları**  
 - ![Chatbot Streamlit](docs/sprint2/ChatbotStreamlit.png)  
