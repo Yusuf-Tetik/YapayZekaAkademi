@@ -360,6 +360,7 @@ Bu sprintte, duygu analiz modülünün tam entegre şekilde çalışması, chatb
 
 **🖼️ UI ve Chatbot Ekranları**  
 - ![Chatbot Streamlit](docs/sprint2/ChatbotStreamlit.png)  
+- ![Emotional Analysis](docs/sprint2/emotionanalysis.jpg)  
 
 #### Öğrenci Paneli
 - 🖼️ ![Ana Ekran – Chatbot](docs/sprint2/Chatbot%20Streamlit.png)
