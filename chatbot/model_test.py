@@ -1,45 +1,75 @@
-# MindSense Eğitim Asistanı (Ollama - Gemma 3B) - Streamlit Chatbot
-# Gereksinimler: pip install streamlit requests
-# Çalıştırmak için: streamlit run chatbot/model_test.py
-
 import streamlit as st
-import requests
 import os
-import time
-import json
+from langchain_core.prompts import PromptTemplate
+from langchain.memory import ConversationBufferMemory
+from langchain.chains import LLMChain
+from langchain_ollama import ChatOllama
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL_NAME = "gemma3:latest"
-PROMPT_PATH = "chatbot/prompts/educational_assistant.txt"
+# PROMPT dosyasını oku
+PROMPT_PATH = os.path.join(os.path.dirname(__file__), "prompts", "educational_assistant.txt")
+with open(PROMPT_PATH, "r", encoding="utf-8") as f:
+    prompt_template_str = f.read()
 
-# Prompt dosyasını oku
-if os.path.exists(PROMPT_PATH):
-    with open(PROMPT_PATH, encoding="utf-8") as f:
-        base_prompt = f.read()
-else:
-    base_prompt = "{history}\nSen: {message}\nMindSense:"
+# Hafıza başlat (session state ile)
+if "memory" not in st.session_state:
+    st.session_state.memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+memory = st.session_state.memory
 
-# Sayfa ayarları
-st.set_page_config(page_title="MindSense Chatbot", page_icon="💬")
-st.title("💬 MindSense Chatbot")
-st.write("Merhaba! Ben MindSense. Derslerinde yardıma ihtiyacın olduğunda buradayım!")
+# OpenChat 3.5 modelini bağla
+llm = ChatOllama(model="openchat")
 
-# Sohbet geçmişi için session_state kullan
-if "history" not in st.session_state:
-    st.session_state.history = []  # Yeni yapı: {"role": "user"/"assistant", "content": "mesaj"}
+# Prompt tanımı
+prompt = PromptTemplate(
+    input_variables=["chat_history", "user_input"],
+    template=prompt_template_str
+)
+chain = LLMChain(llm=llm, prompt=prompt, memory=memory)
 
-# Sohbet geçmişini yukarıdan aşağıya sırala ve hizala
-for item in st.session_state.history:
-    role = item["role"]
-    msg = item["content"]
-    if role == "user":
-        st.markdown(f"<div style='text-align: right; color: #1a73e8;'><b>Sen:</b> {msg}</div>", unsafe_allow_html=True)
-    elif role == "assistant":
-        st.markdown(f"<div style='text-align: left; color: #34a853;'><b>MindSense:</b> {msg}</div>", unsafe_allow_html=True)
+# Arayüz başlat
+st.set_page_config(page_title="MindSense Chat", page_icon="💬")
+st.markdown("""
+    <style>
+    .stChatMessage {
+        background: #f5f5f7; border-radius: 12px; padding: 12px 18px; margin: 6px 0;
+        font-size: 17px;
+    }
+    .chat-row-user { text-align: right; color: #1a73e8; }
+    .chat-row-ai { text-align: left; color: #34a853; }
+    .stTextInput>div>div>input {font-size: 17px;}
+    </style>
+""", unsafe_allow_html=True)
 
-# Örnek sorular sadece ilk mesajda göster
-if len(st.session_state.history) == 0:
-    with st.expander("Örnek Sorular", expanded=False):
+st.title("🧠 MindSense")
+st.write("Merhaba! Ben MindSense. Derslerinde sana yardımcı olmak için buradayım.")
+
+# Chat geçmişini aşağıdan yukarıya (yeni mesaj en altta) göstermek için
+msg_tuples = []
+for msg in memory.chat_memory.messages:
+    if msg.type == "human":
+        msg_tuples.append(("Sen", msg.content, "user"))
+    elif msg.type == "ai":
+        msg_tuples.append(("MindSense", msg.content, "ai"))
+
+# Son 30 mesajı göster, yeniler en altta olacak şekilde sıralama
+with st.container():
+    for sender, content, role in msg_tuples[-30:]:
+        if role == "user":
+            st.markdown(f"<div class='stChatMessage chat-row-user'><b>{sender}:</b> {content}</div>", unsafe_allow_html=True)
+        else:
+            st.markdown(f"<div class='stChatMessage chat-row-ai'><b>{sender}:</b> {content}</div>", unsafe_allow_html=True)
+
+# Chat input en altta ve sabit olsun
+with st.form(key="chat_form", clear_on_submit=True):
+    user_input = st.text_input("", placeholder="Mesajınızı yazın...")
+    send = st.form_submit_button("Gönder")
+    if send and user_input.strip():
+        with st.spinner("MindSense düşünüyor..."):
+            response = chain.invoke({"user_input": user_input.strip()})
+        st.rerun()
+
+# İlk mesajda örnek sorular
+if not memory.chat_memory.messages:
+    with st.expander("📘 Örnek Sorular", expanded=False):
         st.markdown("""
         - Matematik ödevimi yaparken eğlenceli bir yol var mı?
         - Fen dersinde güneş sistemini öğreniyoruz, bana yardımcı olur musun?
@@ -48,71 +78,3 @@ if len(st.session_state.history) == 0:
         - Sınavım kötü geçti, üzgünüm
         """)
 
-# Kullanıcıdan giriş al
-with st.form(key="chat_form", clear_on_submit=True):
-    user_input = st.text_input("", placeholder="Mesajınızı yazın...")
-    send = st.form_submit_button("Gönder")
-
-# Kullanıcı gönderdiğinde işlem başlasın
-if send and user_input:
-
-    # Geçmişi uygun biçimde model promptuna dönüştüren fonksiyon
-    def build_chat_history(history):
-        lines = []
-        for item in history:
-            if item["role"] == "user":
-                lines.append(f"Sen: {item['content']}")
-            elif item["role"] == "assistant":
-                lines.append(f"MindSense: {item['content']}")
-        return "\n".join(lines)
-
-    # Promptu hazırla
-    chat_str = build_chat_history(st.session_state.history)
-    full_prompt = base_prompt.replace("{history}", chat_str).replace("{message}", user_input)
-    # prompt ekranı görsel olarak yazdır
-    with st.expander("📜 Oluşturulan Prompt (Debug)", expanded=False):
-        st.code(full_prompt)
-
-    
-
-
-    payload = {
-        "model": MODEL_NAME,
-        "prompt": full_prompt,
-        "stream": True
-    }
-
-    # Kullanıcı mesajını geçmişe kaydet
-    st.session_state.history.append({"role": "user", "content": user_input})
-
-    # Stream edilen cevabı göstermek için placeholder
-    response_placeholder = st.empty()
-    streamed_answer = ""
-
-    try:
-        with requests.post(OLLAMA_URL, json=payload, stream=True, timeout=120) as resp:
-            resp.raise_for_status()
-            for line in resp.iter_lines():
-                if line:
-                    try:
-                        data = line.decode("utf-8")
-                        chunk = json.loads(data)
-                        part = chunk.get("response", "")
-                        streamed_answer += part
-                        response_placeholder.markdown(
-                            f"<div style='text-align: left; color: #34a853;'><b>MindSense:</b> {streamed_answer}</div>",
-                            unsafe_allow_html=True
-                        )
-                        time.sleep(0.01)
-                    except Exception:
-                        continue
-    except Exception as e:
-        streamed_answer = f"Ollama API hatası: {e}"
-        response_placeholder.markdown(
-            f"<div style='text-align: left; color: #34a853;'><b>MindSense:</b> {streamed_answer}</div>",
-            unsafe_allow_html=True
-        )
-
-    # MindSense cevabını geçmişe kaydet
-    st.session_state.history.append({"role": "assistant", "content": streamed_answer})
-    st.rerun()
