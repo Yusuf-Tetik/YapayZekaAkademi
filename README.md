@@ -785,6 +785,9 @@ Sprint boyunca görev dağılımı dengeli tutulmuş, takım içi iletişim düz
 | Uyarı ve Bildirim Sistemi    | 5                        | 25          |
 
 **Toplam: 49 görev, 195 puan / 195 puan (%100 başarı)**
+
+[Burndown Chart Görüntüle](docs/sprint3/sprint3_burndown_chart.png)
+
 </details>
 
 
