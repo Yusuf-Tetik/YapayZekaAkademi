@@ -498,6 +498,172 @@ Aşağıda takımın performansını değerlendiren bir tablo yer almaktadır:
 - Öğretmen panelinde geçmiş analiz verilerine göre sıralama ve filtreleme eklenmesi
 - Kullanıcı testleri için senaryo oluşturulması ve pilot denemelerin başlatılması
 </details>
+
+<details>
+<summary><strong>Sprint 3: Final Geliştirme Aşaması</strong></summary>
+
+
+### Sprint Amacı
+
+Bu sprintte, MindSense projesinin tüm bileşenleri entegre edilerek fonksiyonel bir minimum ürün (MVP) oluşturulmuştur. Yapay zekâ tabanlı duygu analizi sistemi, React üzerinden alınan öğrenci girişlerini analiz ederek tehlikeli duyguları tespit etmekte ve rehber öğretmene uyarı bildirimleri gönderebilmektedir. Arka plan servisleri FastAPI kullanılarak geliştirilmiş, veriler bir veritabanında kaydedilir ve roller bazlı yetkilendirme sistemi tamamlanmıştır.
+
+
+### Yapılan Geliştirmeler
+
+#### Yapay Zeka Modülü
+
+- Duygu analizi modeli yeniden yapılandırıldı.
+- Model, negatif duygu içeren metinleri belirli bir eşik değerine göre sınıflandıracak şekilde güncellendi.
+- Model çıktısı API katmanına entegre edilerek otomatik risk tespiti yapılması sağlandı.
+
+#### Backend – API Katmanı
+
+- FastAPI kullanılarak analiz, bildirim ve kullanıcı yönetimi endpoint’leri oluşturuldu.
+- `/analyze`, `/alert`, `/login`, `/register` endpoint’leri geliştirildi.
+- React frontend ile bağlantı kurulabilmesi için CORS izinleri tanımlandı.
+
+#### Kullanıcı Giriş ve Rol Sistemi
+
+- Kullanıcılar e-posta ve şifre ile giriş yapabilecek şekilde JWT tabanlı kimlik doğrulama sistemi kuruldu.
+- Öğrenciler yalnızca kendi analiz sonuçlarını görebilecek şekilde yetkilendirildi.
+- Öğretmenler tüm analizleri ve kritik uyarıları takip edebilecek özel bir panele yönlendirildi.
+
+#### React Tabanlı Arayüz
+
+- Streamlit arayüzü sistemden tamamen çıkarıldı.
+- React ile kullanıcı giriş ekranı, analiz giriş sayfası ve öğretmen paneli geliştirildi.
+- Öğrenciler arayüz üzerinden analiz talebinde bulunabilir, öğretmenler sonuçları tablo halinde görüntüleyebilir.
+
+#### Uyarı Sistemi
+
+- Kritik duygu analizleri tespit edildiğinde, sisteme tanımlı rehber öğretmene otomatik e-posta bildirimi gönderilmesi sağlandı.
+- Gönderilen tüm uyarılar hem veritabanında kayıt altına alındı hem de öğretmen panelinden erişilebilir hale getirildi.
+
+
+### Ekran Görüntüleri
+
+<details>
+<summary><strong>1. Uygulama Giriş ve Kayıt Ekranları</strong></summary>
+
+Kullanıcıların sisteme e-posta ve şifre ile giriş yapabildiği ekran. Giriş yapan kullanıcı, rolüne (öğrenci veya öğretmen) göre ilgili alana yönlendirilir.
+
+- Giriş ekranı  
+  ![frontend1](docs/sprint3/frontend1.png)
+
+- Kayıt ekranı  
+  ![frontend2](docs/sprint3/frontend2.png)
+
+</details>
+
+---
+
+<details>
+<summary><strong>2. Öğrenci Paneli</strong></summary>
+
+Öğrencilerin sistem üzerinden analiz talebinde bulunduğu ve duygu analizi sonuçlarını görüntüleyebildiği ekranlardır. Riskli bir analiz tespit edildiğinde ekranda uyarı da görüntülenir.
+
+- Öğrenci analiz ekranı (metin girişi ve sonuç)  
+  ![frontend3](docs/sprint3/frontend3.png)
+
+- Riskli duygu tespit ekranı (uyarı içeren çıktı)  
+  ![frontend4](docs/sprint3/frontend4.png)
+
+</details>
+
+---
+
+<details>
+<summary><strong>3. Öğretmen Paneli</strong></summary>
+
+Rehber öğretmenin sisteme giriş yaptıktan sonra öğrencilerin analiz geçmişlerini tablo halinde görüntüleyebildiği, kritik uyarıları ayırt edebildiği özel paneldir.
+
+- Analiz tablosu (geçmiş veriler ve risk durumları)  
+  ![frontend5](docs/sprint3/frontend5.png)
+
+</details>
+
+---
+
+<details>
+<summary><strong>4. Otomatik E-posta Bildirimi</strong></summary>
+
+Sistem tarafından riskli analiz tespit edildiğinde rehber öğretmene otomatik olarak gönderilen uyarı e-postasının örnek görüntüsüdür.
+
+- Örnek bildirim e-postası  
+  ![mailsample](docs/sprint3/mailsample.png)
+
+</details>
+
+---
+
+<details>
+<summary><strong>5. API Endpoint Şeması</strong></summary>
+
+FastAPI ile geliştirilen sistemin endpoint yapısını gösteren genel görseldir. Tüm giriş, analiz ve bildirim işlemleri bu API uçları üzerinden yapılmaktadır.
+
+- Endpoint şeması  
+  ![endpoints](docs/sprint3/endpoints.png)
+
+</details>
+
+---
+
+<details>
+<summary><strong>6. Takım Toplantıları</strong></summary>
+
+Sprint süresince proje grubunun gerçekleştirdiği online toplantılara ait ekran görüntüleridir. Geliştirme süreci boyunca koordinasyon bu toplantılar üzerinden sağlanmıştır.
+
+- Toplantı 1  
+  ![meeting1](docs/sprint3/meeting1.png)
+
+- Toplantı 2  
+  ![meeting2](docs/sprint3/meeting2.png)
+
+- Toplantı 3  
+  ![meeting3](docs/sprint3/meeting3.png)
+
+- Toplantı 4  
+  ![meeting4](docs/sprint3/meeting4.png)
+
+- Toplantı 5  
+  ![meeting5](docs/sprint3/meeting5.png)
+
+- Toplantı 6 
+  ![meeting6](docs/sprint3/meeting6.png)
+
+- Toplantı 7  
+  ![meeting7](docs/sprint3/meeting7.png)
+
+</details>
+
+---
+
+<details>
+<summary><strong>7. Miro Planlama Panoları</strong></summary>
+
+Sprint 3 görev planlaması ve görevlerin dağılımı Miro üzerinden hazırlanmıştır. Bu görseller, yapılan görevlerin dağılımını ve süreç içerisindeki ilerlemeyi belgelemektedir.
+
+- Miro Swimlane Panosu 1  
+  ![miro1-1](docs/sprint3/miro1-1.png)
+
+- Miro Swimlane Panosu 2  
+  ![miro1-2](docs/sprint3/miro1-2.png)
+
+- Miro Swimlane Panosu 3  
+  ![miro1-3](docs/sprint3/miro1-3.png)
+
+- Miro Görev Takip Panosu 1  
+  ![miro2-1](docs/sprint3/miro2-1.png)
+
+- Miro Görev Takip Panosu 2  
+  ![miro2-2](docs/sprint3/miro2-2.png)
+
+- Miro Görev Takip Panosu 3  
+  ![miro2-3](docs/sprint3/miro2-3.png)
+
+</details>
+
+
 <details>
 <summary><strong> Kurulum Talimatları</strong></summary>
 
