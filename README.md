@@ -548,10 +548,10 @@ Bu sprintte, MindSense projesinin tüm bileşenleri entegre edilerek fonksiyonel
 Kullanıcıların sisteme e-posta ve şifre ile giriş yapabildiği ekran. Giriş yapan kullanıcı, rolüne (öğrenci veya öğretmen) göre ilgili alana yönlendirilir.
 
 - Giriş ekranı  
-  ![frontend1](docs/sprint3/frontend1.png)
+  ![frontend1](docs/sprint3/frontend1.jpeg)
 
 - Kayıt ekranı  
-  ![frontend2](docs/sprint3/frontend2.png)
+  ![frontend2](docs/sprint3/frontend2.jpeg)
 
 </details>
 
@@ -563,10 +563,10 @@ Kullanıcıların sisteme e-posta ve şifre ile giriş yapabildiği ekran. Giri�
 Öğrencilerin sistem üzerinden analiz talebinde bulunduğu ve duygu analizi sonuçlarını görüntüleyebildiği ekranlardır. Riskli bir analiz tespit edildiğinde ekranda uyarı da görüntülenir.
 
 - Öğrenci analiz ekranı (metin girişi ve sonuç)  
-  ![frontend3](docs/sprint3/frontend3.png)
+  ![frontend3](docs/sprint3/frontend3.jpeg)
 
 - Riskli duygu tespit ekranı (uyarı içeren çıktı)  
-  ![frontend4](docs/sprint3/frontend4.png)
+  ![frontend4](docs/sprint3/frontend4.jpeg)
 
 </details>
 
@@ -578,7 +578,7 @@ Kullanıcıların sisteme e-posta ve şifre ile giriş yapabildiği ekran. Giri�
 Rehber öğretmenin sisteme giriş yaptıktan sonra öğrencilerin analiz geçmişlerini tablo halinde görüntüleyebildiği, kritik uyarıları ayırt edebildiği özel paneldir.
 
 - Analiz tablosu (geçmiş veriler ve risk durumları)  
-  ![frontend5](docs/sprint3/frontend5.png)
+  ![frontend5](docs/sprint3/frontend5.jpeg)
 
 </details>
 
@@ -590,7 +590,7 @@ Rehber öğretmenin sisteme giriş yaptıktan sonra öğrencilerin analiz geçmi
 Sistem tarafından riskli analiz tespit edildiğinde rehber öğretmene otomatik olarak gönderilen uyarı e-postasının örnek görüntüsüdür.
 
 - Örnek bildirim e-postası  
-  ![mailsample](docs/sprint3/mailsample.png)
+  ![mailsample](docs/sprint3/mailsample.jpeg)
 
 </details>
 
@@ -602,7 +602,7 @@ Sistem tarafından riskli analiz tespit edildiğinde rehber öğretmene otomatik
 FastAPI ile geliştirilen sistemin endpoint yapısını gösteren genel görseldir. Tüm giriş, analiz ve bildirim işlemleri bu API uçları üzerinden yapılmaktadır.
 
 - Endpoint şeması  
-  ![endpoints](docs/sprint3/endpoints.png)
+  ![endpoints](docs/sprint3/endpoints.jpeg)
 
 </details>
 
