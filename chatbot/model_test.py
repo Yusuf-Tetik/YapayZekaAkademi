@@ -83,7 +83,7 @@ memory = st.session_state.memory
 
 # ---- BURADA: GEMINI PRO'YA GEÇİŞ ----
 # API anahtarını .env'ye koyabilir veya aşağıya direkt ekleyebilirsin (gizli tutmak daha iyi)
-os.environ["GOOGLE_API_KEY"] = "Your-API-Key"
+os.environ["GOOGLE_API_KEY"] = "AIzaSyApjy0K2ZvS2kZiVrDx_iYYThyJPD0-GDU"
 
 
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", convert_system_message_to_human=True)

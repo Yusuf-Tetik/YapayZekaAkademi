@@ -1,0 +1,317 @@
+.analysis-table-container {
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  max-height: 75vh;
+  overflow-y: auto;
+  background: white;
+}
+
+.analysis-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  table-layout: fixed;
+}
+
+.analysis-table thead {
+  background: #f8fafc;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.analysis-table th {
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 600;
+  color: #2d3748;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.analysis-table th:nth-child(1) { width: 16%; } /* Öğrenci Adı */
+.analysis-table th:nth-child(2) { width: 8%; }  /* Sınıf */
+.analysis-table th:nth-child(3) { width: 10%; } /* Tarih */
+.analysis-table th:nth-child(4) { width: 10%; } /* Ders */
+.analysis-table th:nth-child(5) { width: 28%; } /* Analiz Özeti */
+.analysis-table th:nth-child(6) { width: 12%; } /* Uyarı Durumu */
+.analysis-table th:nth-child(7) { width: 10%; } /* Risk Seviyesi */
+.analysis-table th:nth-child(8) { width: 6%; } /* İşlemler */
+
+.analysis-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.analysis-table th.sortable:hover {
+  background-color: #edf2f7;
+}
+
+.analysis-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.table-row {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background-color: #f8fafc;
+}
+
+.table-row.selected {
+  background-color: #ebf8ff;
+}
+
+.table-row.high-risk {
+  background-color: #fef2f2;
+  border-left: 4px solid #f56565;
+}
+
+.table-row.high-risk:hover {
+  background-color: #fed7d7;
+}
+
+.student-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.student-info .name {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.student-info .emotion {
+  font-size: 0.75rem;
+  color: #718096;
+  background: #edf2f7;
+  padding: 2px 8px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.class-badge {
+  background: #4299e1;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.date-cell {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.subject-cell {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.summary-cell {
+  max-width: none;
+}
+
+.summary-text {
+  line-height: 1.5;
+  color: #4a5568;
+  font-size: 0.875rem;
+}
+
+.warning-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.warning-badge.warning-critical {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.warning-badge.warning-high {
+  background: #fef5e7;
+  color: #dd6b20;
+}
+
+.warning-badge.warning-medium {
+  background: #fefcbf;
+  color: #d69e2e;
+}
+
+.warning-badge.warning-low {
+  background: #c6f6d5;
+  color: #2f855a;
+}
+
+.warning-badge.warning-none {
+  background: #f0fff4;
+  color: #2f855a;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  padding: 6px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background: white;
+  color: #4a5568;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.action-button:hover {
+  background: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+.view-button:hover {
+  background: #ebf8ff;
+  border-color: #4299e1;
+  color: #2b6cb0;
+}
+
+.report-button:hover {
+  background: #f0fff4;
+  border-color: #48bb78;
+  color: #2f855a;
+}
+
+.risk-button {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.risk-button:hover {
+  background: #fdc2c4;
+  border-color: #f87171;
+  color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #718096;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.empty-state h3 {
+  margin: 0 0 8px 0;
+  color: #2d3748;
+  font-size: 1.25rem;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.table-footer {
+  padding: 18px 24px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.legend-title {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.875rem;
+}
+
+.legend-items {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  font-size: 0.75rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .analysis-table th:nth-child(1) { width: 18%; }
+  .analysis-table th:nth-child(5) { width: 25%; }
+}
+
+@media (max-width: 768px) {
+  .analysis-table {
+    font-size: 0.8rem;
+    table-layout: auto;
+  }
+  
+  .analysis-table th,
+  .analysis-table td {
+    padding: 10px 12px;
+  }
+
+  .analysis-table th:nth-child(1) { width: auto; }
+  .analysis-table th:nth-child(2) { width: auto; }
+  .analysis-table th:nth-child(3) { width: auto; }
+  .analysis-table th:nth-child(4) { width: auto; }
+  .analysis-table th:nth-child(5) { width: auto; }
+  .analysis-table th:nth-child(6) { width: auto; }
+  .analysis-table th:nth-child(7) { width: auto; }
+  .analysis-table th:nth-child(8) { width: auto; }
+  
+  .actions-cell {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .legend-items {
+    gap: 12px;
+  }
+} 

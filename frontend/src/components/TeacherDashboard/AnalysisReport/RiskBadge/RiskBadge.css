@@ -1,0 +1,74 @@
+.risk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.risk-badge.small {
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  gap: 4px;
+}
+
+.risk-icon {
+  font-size: 0.875em;
+}
+
+.risk-text {
+  line-height: 1;
+}
+
+/* Risk seviyeleri */
+.risk-badge.risk-high {
+  background-color: #fed7d7;
+  color: #c53030;
+  border: 1px solid #feb2b2;
+}
+
+.risk-badge.risk-high:hover {
+  background-color: #fbb6ce;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(197, 48, 48, 0.2);
+}
+
+.risk-badge.risk-medium {
+  background-color: #fefcbf;
+  color: #d69e2e;
+  border: 1px solid #f6e05e;
+}
+
+.risk-badge.risk-medium:hover {
+  background-color: #faf089;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(214, 158, 46, 0.2);
+}
+
+.risk-badge.risk-low {
+  background-color: #c6f6d5;
+  color: #2f855a;
+  border: 1px solid #9ae6b4;
+}
+
+.risk-badge.risk-low:hover {
+  background-color: #9ae6b4;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(47, 133, 90, 0.2);
+}
+
+.risk-badge.risk-unknown {
+  background-color: #edf2f7;
+  color: #718096;
+  border: 1px solid #cbd5e0;
+}
+
+.risk-badge.risk-unknown:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(113, 128, 150, 0.2);
+} 

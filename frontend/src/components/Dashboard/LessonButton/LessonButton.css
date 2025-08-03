@@ -1,0 +1,267 @@
+/* Lesson Button - İnteraktif ders butonları */
+.lesson-button {
+  position: relative;
+  width: 100%;
+  min-height: 120px;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: inherit;
+  text-align: left;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border: 3px solid transparent;
+}
+
+.lesson-button:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--lesson-color);
+}
+
+.lesson-button:active,
+.button-pressed {
+  transform: translateY(-4px) scale(0.98);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--lesson-color-light);
+}
+
+/* Ders ikonu */
+.lesson-icon {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--lesson-color), var(--lesson-color-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.lesson-button:hover .lesson-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 20px var(--lesson-color-light);
+}
+
+.icon-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* Ders bilgileri */
+.lesson-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lesson-name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.lesson-button:hover .lesson-name {
+  color: var(--lesson-color);
+}
+
+.lesson-description {
+  margin: 0;
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Ok ikonu */
+.lesson-arrow {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--lesson-color-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lesson-color);
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.lesson-button:hover .lesson-arrow {
+  opacity: 1;
+  background: var(--lesson-color);
+  color: white;
+  transform: translateX(5px);
+}
+
+/* Parıltı efekti */
+.lesson-shine {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.lesson-button:hover .lesson-shine {
+  transform: translateX(100%);
+}
+
+/* Tıklama dalgası efekti */
+.lesson-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--lesson-color-light);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lesson-button:active .lesson-ripple {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.6;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .lesson-button {
+    min-height: 100px;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .lesson-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon-emoji {
+    font-size: 1.75rem;
+  }
+
+  .lesson-name {
+    font-size: 1.3rem;
+  }
+
+  .lesson-description {
+    font-size: 0.9rem;
+  }
+
+  .lesson-arrow {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lesson-button {
+    min-height: 90px;
+    padding: 1rem;
+    gap: 0.75rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lesson-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-emoji {
+    font-size: 1.5rem;
+  }
+
+  .lesson-name {
+    font-size: 1.2rem;
+  }
+
+  .lesson-description {
+    font-size: 0.85rem;
+    display: none; /* Mobilde açıklama gizli */
+  }
+
+  .lesson-arrow {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Accessibility iyileştirmeleri */
+@media (prefers-reduced-motion: reduce) {
+  .lesson-button,
+  .lesson-icon,
+  .lesson-arrow,
+  .lesson-shine {
+    transition: none;
+  }
+
+  .lesson-button:hover {
+    transform: none;
+  }
+
+  .lesson-shine {
+    display: none;
+  }
+
+  .lesson-ripple {
+    display: none;
+  }
+}
+
+/* High contrast mode desteği */
+@media (prefers-contrast: high) {
+  .lesson-button {
+    border: 2px solid #000;
+  }
+
+  .lesson-name {
+    color: #000;
+  }
+
+  .lesson-description {
+    color: #333;
+  }
+} 
