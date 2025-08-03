@@ -6,7 +6,8 @@ from datetime import datetime
 from langchain_core.prompts import PromptTemplate
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import LLMChain
-from langchain_ollama import ChatOllama
+# --- BURADA: Gemini için import
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 # --- Duygu Analizi için HuggingFace pipeline ---
 from transformers import pipeline
@@ -80,8 +81,12 @@ if "memory" not in st.session_state:
     st.session_state.memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 memory = st.session_state.memory
 
-# OpenChat 3.5 modelini bağla
-llm = ChatOllama(model="openchat")
+# ---- BURADA: GEMINI PRO'YA GEÇİŞ ----
+# API anahtarını .env'ye koyabilir veya aşağıya direkt ekleyebilirsin (gizli tutmak daha iyi)
+os.environ["GOOGLE_API_KEY"] = "Your-API-Key"
+
+
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", convert_system_message_to_human=True)
 
 prompt = PromptTemplate(
     input_variables=["chat_history", "user_input"],
