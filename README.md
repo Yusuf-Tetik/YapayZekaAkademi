@@ -663,6 +663,132 @@ Sprint 3 görev planlaması ve görevlerin dağılımı Miro üzerinden hazırla
 
 </details>
 
+---
+
+### Sprint Değerlendirmesi
+
+Bu sprintte, önceki sprintlerde ayrı ayrı geliştirilen tüm bileşenler birleştirilerek projenin çalışır hâle getirilmesi hedeflenmiştir. Yapay zekâ modeli, kullanıcıdan gelen girdilere göre duygu analizi yapacak şekilde güncellenmiş; arayüzden API’ye veri akışı sağlanmış ve kritik durumlarda sistemin rehber öğretmeni bilgilendirmesi için uyarı mekanizması kurulmuştur. Kullanıcı rollerine göre yetkilendirme sistemi tamamlanmış ve React tabanlı yeni arayüzde kullanıcı deneyimi sorunsuz şekilde sunulmuştur.
+
+Streamlit arayüzü bu sprintte tamamen kaldırılmış ve yerine modern, tek sayfalık bir React uygulaması geliştirilmiştir. Giriş ekranı, analiz alanı ve öğretmen paneli ayrıştırılmış, kullanıcı tipi bilgisi oturum bazlı olarak yönetilmiştir. Arayüz, hem öğrenci hem öğretmen rollerine uygun şekilde veri sunacak şekilde yapılandırılmıştır. Tüm duygu analizleri veritabanına kaydedilmiş ve riskli görülenler için otomatik e-posta bildirimi uygulanmıştır.
+
+Sprint boyunca görev dağılımı dengeli tutulmuş, takım içi iletişim düzenli şekilde yürütülmüş ve planlanan tüm işler zamanında tamamlanmıştır. Belgeler eksiksiz olarak güncellenmiş, toplantı ve görsel kayıtlar sistemli biçimde toplanarak dökümantasyona dahil edilmiştir. Bu sprintte sistem son hâlini almış ve proje başarıyla tamamlanmıştır.
+
+<details>
+<summary><strong>🔍 Sprint 3 Görev Bazlı Skorlama Tablosu</strong></summary>
+
+### Chatbot Geliştirme Modülü
+
+| Modül                     | Görev                                | Durum | Açıklama                                                        | Puan |
+|--------------------------|---------------------------------------|-------|------------------------------------------------------------------|------|
+| Chatbot Geliştirme Modülü | Cevaplarda TTS Desteği               | ✅     | Model cevapları sesli şekilde okuma özelliği başarıyla entegre edildi. | 5    |
+| Chatbot Geliştirme Modülü | Mesaj yazma ve gönderme alanı        | ✅     | Kullanıcının chat alanına mesaj yazıp gönderebildiği arayüz aktif. | 5    |
+| Chatbot Geliştirme Modülü | Prompt/preset ile API’ye bağlanan yapı | ✅    | Prompt dosyası yükleniyor ve LLM'e uygun formatta aktarılıyor.   | 5    |
+| Chatbot Geliştirme Modülü | Cevaba göre duygu sonucu             | ✅     | LLM yanıtına göre duygu analizi sonucu döndürülüyor.             | 5    |
+| Chatbot Geliştirme Modülü | Riskli yanıt mesajı göster           | ✅     | Riskli duygu varsa uyarı mesajı kullanıcıya gösteriliyor.        | 5    |
+| Chatbot Geliştirme Modülü | LangChain entegrasyonu               | ✅     | LangChain ile LLMChain, PromptTemplate ve Memory entegre edildi. | 5    |
+
+---
+
+### Duygu Analizi Sistemi
+
+| Modül                 | Görev                                      | Durum | Açıklama                                                                 | Puan |
+|----------------------|---------------------------------------------|-------|--------------------------------------------------------------------------|------|
+| Duygu Analizi Sistemi | Veri ön işleme (normalizasyon vs)          | ✅     | Kullanıcı girdileri temizlenip analiz için uygun hale getirildi.        | 5    |
+| Duygu Analizi Sistemi | HuggingFace modeli ile analiz              | ✅     | Türkçe duygu analiz modeli başarıyla entegre edildi ve çıktı alındı.     | 5    |
+| Duygu Analizi Sistemi | Çoklu etiket tanımı (örn. üzgün + riskli)  | ✅     | Birden fazla duygu veya riskli etiket eş zamanlı işaretlenebiliyor.     | 5    |
+| Duygu Analizi Sistemi | Analiz sonrası sonuçları frontend'e iletme | ✅     | Analiz sonuçları API aracılığıyla arayüze aktarılıyor.                  | 5    |
+| Duygu Analizi Sistemi | Model dışa aktar (pickle)                  | ✅     | Eğitimli model `.pkl` formatında dışa aktarıldı.                        | 5    |
+
+---
+
+### Öğrenci & Öğretmen Paneli
+
+| Modül                     | Görev                                 | Durum | Açıklama                                                              | Puan |
+|--------------------------|----------------------------------------|-------|-----------------------------------------------------------------------|------|
+| Öğrenci & Öğretmen Paneli | Kullanıcı giriş ekranı                | ✅     | Giriş ekranı temel bileşenleriyle oluşturuldu.                        | 5    |
+| Öğrenci & Öğretmen Paneli | Teacher role giriş ekranı             | ✅     | Öğretmenlere özel giriş alanı sağlandı.                               | 5    |
+| Öğrenci & Öğretmen Paneli | Geçmiş analizleri kullanıcı özelinde listele | ✅ | Kullanıcının geçmiş duygu analizleri listeleniyor.                    | 5    |
+| Öğrenci & Öğretmen Paneli | Riskli analizleri kırmızı renkle vurgula | ✅   | Uyarı gerektiren analizler özel renkle vurgulandı.                    | 5    |
+| Öğrenci & Öğretmen Paneli | Tarih/kullanıcıya göre filtreleme     | ✅     | Rehber öğretmen sadece kendi öğrencilerini görebiliyor.               | 5    |
+| Öğrenci & Öğretmen Paneli | Uyarı geçmişini gösterme              | ✅     | Öğrencinin geçmişte aldığı sistemsel uyarılar listelenebiliyor.       | 5    |
+
+---
+
+### Backend (FastAPI)
+
+| Modül         | Görev                               | Durum | Açıklama                                                       | Puan |
+|--------------|--------------------------------------|-------|----------------------------------------------------------------|------|
+| Backend       | FastAPI proje başlat                 | ✅     | Proje yapısı FastAPI ile organize edildi.                      | 5    |
+| Backend       | CRUD işlemleri                       | ✅     | Temel veri kayıt, okuma, güncelleme, silme işlemleri tamamlandı. | 5    |
+| Backend       | Duygu endpoint oluştur (modelin analizi) | ✅  | Duygu analizi API endpoint üzerinden erişilebilir.             | 5    |
+| Backend       | Uyarı endpoint oluştur               | ✅     | Riskli analiz sonucunda tetiklenen uyarı API'si tanımlandı.     | 5    |
+| Backend       | OpenAPI/swagger dökümünü hazırla     | ✅     | Tüm API uç noktaları Swagger üzerinde test edilebilir.         | 5    |
+
+---
+
+### Yönetim & İletişim
+
+| Modül               | Görev                                        | Durum | Açıklama                                                      | Puan |
+|--------------------|-----------------------------------------------|-------|---------------------------------------------------------------|------|
+| Yönetim & İletişim | Rehber öğretmen seçimi arayüzde aktif         | ✅     | Öğrencilere özel rehber öğretmen atanabiliyor.                | 5    |
+| Yönetim & İletişim | Öğretmen/öğrenci listesine sistem mesajı gönder | ✅   | Öğretmenler tek tıkla öğrencilere bildirim iletebilir.         | 5    |
+| Yönetim & İletişim | Son demo videosu hazırlandı                   | ✅     | Sunum için tanıtım videosu oluşturuldu.                       | 5    |
+
+---
+
+### Veritabanı Entegrasyonu
+
+| Modül                    | Görev                                  | Durum | Açıklama                                                       | Puan |
+|-------------------------|-----------------------------------------|-------|----------------------------------------------------------------|------|
+| Veritabanı              | DB şeması oluştur (Users, Results...)   | ✅     | Kullanıcılar ve analiz sonuçları için ilişkisel şema hazırlandı. | 5    |
+| Veritabanı              | PostgreSQL bağlantısı kur                | ✅     | FastAPI ile PostgreSQL veritabanı bağlantısı kuruldu.          | 5    |
+| Veritabanı              | Veri aktarımı ve kayıt fonksiyonları yaz | ✅    | Yeni analizler başarıyla kaydediliyor.                         | 5    |
+| Veritabanı              | Öğrenci ve öğretmen verilerini ilişkilendir | ✅  | Rehber–öğrenci ilişkisi foreign key ile tanımlandı.             | 5    |
+
+---
+
+### Kullanıcı Giriş & Rol Sistemi
+
+| Modül                    | Görev                                  | Durum | Açıklama                                                       | Puan |
+|-------------------------|-----------------------------------------|-------|----------------------------------------------------------------|------|
+| Giriş & Rol Sistemi     | Kullanıcı modeli (id, email, role...)   | ✅     | Giriş yapan her kullanıcıya ait model tanımlandı.              | 5    |
+| Giriş & Rol Sistemi     | JWT token üretimi ve saklama            | ✅     | Kullanıcı doğrulama sistemi JWT token ile çalışıyor.           | 5    |
+| Giriş & Rol Sistemi     | Kimlik doğrulama middleware’i yaz       | ✅     | Her istek token doğrulaması ile filtreleniyor.                 | 5    |
+| Giriş & Rol Sistemi     | Rol bazlı erişim                        | ✅     | Öğrenci, öğretmen, admin gibi rollere göre erişim sınırlandırıldı. | 5    |
+| Giriş & Rol Sistemi     | Kullanıcıya özel veri filtreleme        | ✅     | Kullanıcı sadece kendisine ait verileri görebiliyor.           | 5    |
+
+---
+
+### Uyarı ve Bildirim Sistemi
+
+| Modül                  | Görev                                   | Durum | Açıklama                                                        | Puan |
+|------------------------|------------------------------------------|-------|------------------------------------------------------------------|------|
+| Bildirim Sistemi       | SMTP sunucusu tanımı (email, Mailgun...) | ✅     | Uyarılar için gerekli e-posta yapılandırmaları yapıldı.         | 5    |
+| Bildirim Sistemi       | Mail şablonu hazırla (isim, skor, tarih) | ✅     | E-postalar kullanıcıya özel kişiselleştirilmiş şekilde geliyor. | 5    |
+| Bildirim Sistemi       | Riskli analiz sonrası mail gönder        | ✅     | Riskli analizden sonra öğretmene otomatik mail gidiyor.         | 5    |
+| Bildirim Sistemi       | Gönderilen mailleri DB’ye kaydet         | ✅     | Mail logları sistemde kayıt altına alınıyor.                    | 5    |
+| Bildirim Sistemi       | Dashboard’da “son uyarılar” alanı        | ✅     | Son uyarılar öğretmen panelinde listeleniyor.                   | 5    |
+
+---
+
+### Sprint 3 Genel Skor Tablosu
+
+| Modül                         | Tamamlanan Görev Sayısı | Toplam Puan |
+|------------------------------|--------------------------|-------------|
+| Chatbot Geliştirme Modülü    | 6                        | 30          |
+| Duygu Analizi Sistemi        | 5                        | 25          |
+| Öğrenci & Öğretmen Paneli    | 6                        | 30          |
+| Backend (FastAPI)            | 5                        | 25          |
+| Yönetim & İletişim           | 3                        | 15          |
+| Veritabanı Entegrasyonu      | 4                        | 20          |
+| Giriş & Rol Yönetimi         | 5                        | 25          |
+| Uyarı ve Bildirim Sistemi    | 5                        | 25          |
+
+**Toplam: 49 görev, 195 puan / 195 puan (%100 başarı)**
+</details>
+
+
+</details>
 
 <details>
 <summary><strong> Kurulum Talimatları</strong></summary>
