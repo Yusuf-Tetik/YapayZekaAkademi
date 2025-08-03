@@ -790,6 +790,24 @@ Sprint boyunca görev dağılımı dengeli tutulmuş, takım içi iletişim düz
 
 </details>
 
+### Neler İyi Gitti?
+
+- Planlanan tüm modüller (Chatbot, Duygu Analizi, UI, Backend, Bildirim Sistemi, Giriş-Rol, DB vb.) eksiksiz biçimde tamamlandı.
+- Chatbot artık yalnızca metinle değil, öğrenci girdilerine göre duygu analizine dayalı tepki verecek şekilde çalışıyor.
+- UI tarafında React geçişi başarıyla gerçekleştirildi; Streamlit tamamen sistemden çıkarıldı.
+- Ekip içi iletişim; Google Meet, WhatsApp ve Miro üzerinden sürekli ve verimli şekilde sürdürüldü.
+- GitHub yapısı; modül klasörleri, `docs/`, issue yönetimi ve README içerikleriyle teslim formatına uygun olarak düzenlendi.
+- Miro panosu, kullanıcı senaryoları ve proje belgeleri eksiksiz tamamlandı.
+- Burndown chart sıfıra ulaştı; Sprint zamanlamasına tam uyum sağlandı.
+
+
+### Sprint 3 Retrospective (Final Sprint)
+
+- Sprint 3, tüm modüllerin entegre edildiği, sistemin uçtan uca çalışır hale getirildiği ve ürünün MVP seviyesinde tamamlandığı son sprint olmuştur.
+- Sistem test edilebilir, sunulabilir ve genişletilebilir bir mimariyle teslim edilmiştir.
+- Tüm proje çıktıları, dökümantasyonları ve görselleri eksiksiz şekilde oluşturulmuş ve düzenlenmiştir.
+- Ekip uyumu, sorumluluk dağılımı ve proje yönetimi başarıyla gerçekleştirilmiştir.
+
 
 </details>
 
