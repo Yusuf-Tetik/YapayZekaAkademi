@@ -1,0 +1,46 @@
+[
+    {
+        "text": "Bugün harika hissediyorum, matematik dersim çok iyi geçti!",
+        "expected_emotion": "joy"
+    },
+    {
+        "text": "Hiçbir şey anlamıyorum, bu konular beni çok zorluyor.Kendimi çok üzgün hissediyorum.",
+        "expected_emotion": "sadness"
+    },
+    {
+        "text": "Sınavdan düşük not alırsam ailem çok kızacak diye korkuyorum.",
+        "expected_emotion": "fear"
+    },
+    {
+        "text": "Sınav çok kötü geçti, sinirliyim.",
+        "expected_emotion": "anger"
+    },
+    {
+        "text": "Yeni arkadaşlarımla oyun oynamak çok keyifliydi!",
+        "expected_emotion": "joy"
+    },
+    {
+        "text": "Bugün güneşli bir gün, çok keyifli hissediyorum.",
+        "expected_emotion": "joy"
+    },
+    {
+        "text": "Her şey üstüme geliyor gibi, gerçekten sinirliyim.",
+        "expected_emotion": "anger"
+    },
+    {
+        "text": "Kimse beni anlamıyor, kendimi yalnız hissediyorum.",
+        "expected_emotion": "sadness"
+    },
+    {
+        "text": "Yarın açıklanacak sonuçlar beni çok korkutuyor.",
+        "expected_emotion": "fear"
+    },
+    {
+        "text": "Seninle olmak kalbimi ısıtıyor.",
+        "expected_emotion": "love"
+    },
+    {
+        "text": "Bu kadar hızlı çözmen beni çok şaşırttı!",
+        "expected_emotion": "surprise"
+    }
+]
